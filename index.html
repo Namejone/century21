@@ -1,0 +1,2485 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CENTURY 21 Clermont à Ath vous propose un accompagnement personnalisé pour tous vos projets immobiliers
+              achat,
+              vente et location de propriétés d'exception.">
+  <title>Century21</title>
+
+  <!-- FavIcon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./src/imgs/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/imgs/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./src/imgs/fav/favicon-16x16.png">
+  <link rel="manifest" href="./src/imgs/fav/site.webmanifest">
+
+  <!-- Google Poppins Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Rimix Icon  -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- Main Css -->
+  <link href="/src/css/style.css" rel="stylesheet">
+</head>
+
+<body class="relative">
+
+  <!-- header -->
+  <div x-data="{ scrolled: false, menuOpen: false }" @scroll.window="scrolled = (window.pageYOffset > 1)">
+
+    <header :class="scrolled ? 'fixed bg-white/95 backdrop-blur-sm shadow-md py-3' : 'absolute bg-transparent py-4'"
+      class="left-0 top-0 w-full z-50 transition-all duration-400 ease-in-out shadow-lg">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img src="./src/imgs/logos/logo.png" alt="Century 21 Logo"
+              class="hidden lg:block transition-all duration-400" :class="scrolled ? 'h-10' : 'h-[50px]'">
+            <img src="./src/imgs/logos/logo-m.svg" alt="Century 21 Logo" class="lg:hidden h-8">
+          </div>
+
+          <!-- Right Side -->
+          <div class="flex items-center gap-4">
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex space-x-10 text-sm font-normal me-5">
+              <a href="#" class="hover:text-primary transition font-bold">À vendre</a>
+              <a href="#" class="hover:text-primary transition">À louer</a>
+              <a href="#" class="hover:text-primary transition">Estimer mon bien</a>
+              <a href="#" class="hover:text-primary transition">Agence</a>
+              <a href="#" class="hover:text-primary transition">Contact</a>
+            </nav>
+
+            <!-- CTA (hidden on mobile) -->
+            <a href="" class="btn btn-dark ">Prendre RDV</a>
+
+            <!-- Search Button -->
+            <button type="button"
+              class="h-[42px] w-[42px] rounded-full flex-none btn btn-primary p-0 flex items-center justify-center">
+              <img src="./src/imgs/icons/search-icon.svg" class="max-w-[20px]" alt="Search-icon">
+            </button>
+
+            <!-- Mobile Menu Trigger -->
+            <button type="button" class="lg:hidden" @click="menuOpen = true">
+              <img src="./src/imgs/icons/menu-bar.svg" alt="menu-icon">
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div x-show="menuOpen" x-transition:enter="transition-opacity duration-300 ease-in-out"
+      x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+      x-transition:leave="transition-opacity duration-300 ease-in-out" x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0" @click="menuOpen = false" class="fixed inset-0 bg-black/50 z-[60]" x-cloak>
+    </div>
+
+    <div x-show="menuOpen" x-transition:enter="transition-transform duration-300 ease-in-out"
+      x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition-transform duration-300 ease-in-out" x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="-translate-x-full"
+      class="fixed top-0 left-0 h-full w-[300px] bg-white z-[70] flex flex-col" x-cloak>
+
+      <!-- Offcanvas Header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-primary">
+        <img src="./src/imgs/logos/logo.png" alt="Century 21 Logo" class="h-9">
+        <button @click="menuOpen = false"
+          class="h-9 w-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors duration-200">
+          <i class="ri-close-line text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="flex flex-col px-6 py-4 flex-1 overflow-y-auto">
+        <a href="#"
+          class="text-[16px] font-bold text-gray-800 py-4 border-b border-gray-100 hover:text-primary transition-colors duration-200">
+          À vendre
+        </a>
+        <a href="#"
+          class="text-[16px] font-normal text-gray-800 py-4 border-b border-gray-100 hover:text-primary transition-colors duration-200">
+          À louer
+        </a>
+        <a href="#"
+          class="text-[16px] font-normal text-gray-800 py-4 border-b border-gray-100 hover:text-primary transition-colors duration-200">
+          Estimer mon bien
+        </a>
+        <a href="#"
+          class="text-[16px] font-normal text-gray-800 py-4 border-b border-gray-100 hover:text-primary transition-colors duration-200">
+          Agence
+        </a>
+        <a href="#"
+          class="text-[16px] font-normal text-gray-800 py-4 border-b border-gray-100 hover:text-primary transition-colors duration-200">
+          Contact
+        </a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="px-6 py-6 border-t border-gray-100">
+        <a href="#" class="btn btn-dark w-full flex items-center justify-center">
+          Prendre RDV
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- header--end -->
+
+
+  <!-- main -->
+  <main>
+    <!-- Hero-section -->
+    <section class="pb-12 pt-24 lg:pt-36 lg:pb-28">
+      <div class="container">
+        <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-12">
+          <div class="w-full lg:w-1/2 space-y-6">
+            <div class="mb-3 lg:mb-4">
+              <img src="./src/imgs/logos/logo.png" alt="Century 21" class="h-12 lg:h-24 mb-4 md:mb-6 lg:mb-10">
+              <h1 class="text-5xl lg:text-9xl leading-tight">
+                Chez nous,<br>
+                vous êtes déjà<br>
+                chez vous !
+              </h1>
+            </div>
+
+            <p class=" text-sm md:text-base leading-relaxed max-w-md mb-0">
+              CENTURY 21 Clermont à Ath vous propose un accompagnement personnalisé pour tous vos projets immobiliers
+              achat,
+              vente et location de propriétés d'exception.
+            </p>
+
+            <div class="flex flex-col items-start gap-4 pt-3 lg:pt-4">
+              <button class="btn btn-primary">
+                Rechercher un bien
+              </button>
+              <button class="btn btn-dark">
+                Faire estimer mon bien
+              </button>
+              <button class="btn btn-outline-dark">
+                Nos services
+              </button>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-4 pt-10 md:pt-18">
+              <div class="rounded-2xl overflow-hidden shadow-sm">
+                <img src="./src/imgs/thumbs/hero-img-1.webp" alt="City View"
+                  class="w-full h-[104px] md:h-[185px] object-cover">
+              </div>
+              <div class="rounded-2xl overflow-hidden shadow-sm">
+                <img src="./src/imgs/thumbs/hero-img-2.webp" alt="Historic Building" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <div class=" rounded-2xl overflow-hidden shadow-sm">
+                <img src="./src/imgs/thumbs/hero-img-3.webp" alt="Blue Lake" class="w-full h-full object-cover">
+              </div>
+              <div class="rounded-2xl overflow-hidden shadow-sm">
+                <img src="./src/imgs/thumbs/hero-img-4.webp" alt="Church Interior"
+                  class="w-full h-[104px] md:h-[185px] object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero-section--end -->
+
+    <!-- Top Searched Cities Section -->
+    <section class="py-10 md:py-20 lg:py-28">
+      <div class="container">
+        <div class="mb-7 lg:mb-10">
+          <h2 class="text-3xl md:text-6xl mb-3">Top des villes recherchées</h2>
+          <p class=" lg:max-w-md leading-relaxed">
+            Découvrez les villes qui séduisent le plus de nouveaux habitants et où il fait bon vivre.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4 mb-8">
+
+          <div
+            class="group relative rounded-2xl overflow-hidden aspect-card cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img src="./src/imgs/thumbs/city-1.webp" alt="Ville de Ath"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-0"
+              loading="lazy">
+            <img src="./src/imgs/thumbs/city-2.webp" alt="Ath Hover"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100 z-10"
+              loading="lazy">
+
+            <div class="absolute h-1/2 bottom-0 left-0 w-full  bg-gradient-to-b from-transparent to-black z-20"></div>
+
+            <div
+              class="absolute top-5 right-5 z-30 flex items-center justify-center h-7 w-7 lg:h-10 lg:w-10 transform -rotate-45 rounded-full bg-black text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+
+            <h3 class="absolute bottom-4 left-4 z-30 text-white text-xl lg:text-6xl font-medium tracking-tight">Ath
+            </h3>
+          </div>
+
+          <div
+            class="group relative rounded-2xl overflow-hidden aspect-card cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img src="./src/imgs/thumbs/city-2.webp" alt="Ville de Lessines"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-0"
+              loading="lazy">
+            <img src="./src/imgs/thumbs/city-4.webp" alt="Lessines Hover"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100 z-10"
+              loading="lazy">
+
+            <div class="absolute h-1/2 bottom-0 left-0 w-full  bg-gradient-to-b from-transparent to-black z-20"></div>
+
+            <div
+              class="absolute top-5 right-5 z-30 flex items-center justify-center h-7 w-7 lg:h-10 lg:w-10 transform -rotate-45 rounded-full bg-black text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+
+            <h3 class="absolute bottom-4 left-4 z-30 text-white text-xl lg:text-[44px] font-medium tracking-tight">
+              Lessines</h3>
+          </div>
+
+          <div
+            class="group relative rounded-2xl overflow-hidden aspect-card cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img src="./src/imgs/thumbs/city-3.webp" alt="Ville de Ellezelles"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-0"
+              loading="lazy">
+            <img src="./src/imgs/thumbs/city-1.webp" alt="Ellezelles Hover"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100 z-10"
+              loading="lazy">
+
+            <div class="absolute h-1/2 bottom-0 left-0 w-full  bg-gradient-to-b from-transparent to-black z-20"></div>
+
+            <div
+              class="absolute top-5 right-5 z-30 flex items-center justify-center h-7 w-7 lg:h-10 lg:w-10 transform -rotate-45 rounded-full bg-black text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+
+            <h3 class="absolute bottom-4 left-4 z-30 text-white text-xl lg:text-[44px] font-medium tracking-tight">
+              Ellezelles</h3>
+          </div>
+
+          <div
+            class="group relative rounded-2xl overflow-hidden aspect-card cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img src="./src/imgs/thumbs/city-4.webp" alt="Ville de Ottignies"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-0"
+              loading="lazy">
+            <img src="./src/imgs/thumbs/city-2.webp" alt="Ottignies Hover"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100 z-10"
+              loading="lazy">
+
+            <div class="absolute h-1/2 bottom-0 left-0 w-full  bg-gradient-to-b from-transparent to-black z-20"></div>
+
+            <div
+              class="absolute top-5 right-5 z-30 flex items-center justify-center h-7 w-7 lg:h-10 lg:w-10 transform -rotate-45 rounded-full bg-black text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+
+            <h3 class="absolute bottom-4 left-4 z-30 text-white text-xl lg:text-[44px] font-medium tracking-tight">
+              Ottignies</h3>
+          </div>
+
+        </div>
+
+        <div class="flex justify-center">
+          <button class="btn btn-dark">
+            Parcourir toutes les villes
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Top Searched Cities Section--end -->
+
+    <!-- Product Slider Section -->
+    <section class="py-10  lg:py-20 bg-light">
+      <div class="container">
+        <div class="mb-7 lg:mb-10">
+          <h2 class="text-3xl md:text-6xl mb-3">Les opportunités
+            du moment</h2>
+          <p class=" lg:max-w-md leading-relaxed">
+            Parcourez notre sélection de biens et trouvez celui qui correspond à vos envies.
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <div class="swiper currentOpportunities mb-8">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="rounded-xl overflow-hidden  shadow-xs bg-white">
+                  <div class="relative h-56 bg-gray-100">
+                    <img src="./src/imgs/thumbs/house-img.webp" alt="House" class="w-full h-full object-cover"
+                      loading="lazy">
+                    <div
+                      class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-0.5 rounded-full text-xs font-normal uppercase tracking-wide">
+                      Maison
+                    </div>
+                    <button
+                      class="absolute top-3 right-3 bg-gray-800/30 p-2 rounded-full backdrop-blur-md hover:bg-gray-800/50 transition cursor-pointer"
+                      aria-label="wishlist-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="p-5 text-left">
+                    <div class="flex items-center gap-1  text-sm mb-1">
+                      <span class="text-primary"><i class="ri-map-pin-line"></i></span>
+                      Ormeignies
+                    </div>
+                    <h3 class="text-md font-normal mb-4">Maison à vendre</h3>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center mb-4 px-2">
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-building-line"></i>
+                        <span class="font-normal text-xs">3</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-hotel-bed-line"></i>
+                        <span class="font-normal text-xs">2</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-showers-line"></i>
+                        <span class="font-normal text-xs">1</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-drag-move-line"></i>
+                        <span class="font-normal text-xs">110 m²</span>
+                      </div>
+                    </div>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center">
+                      <span class="text-md font-normal">210.000€</span>
+                      PEB Img
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rounded-xl overflow-hidden  shadow-xs bg-white">
+                  <div class="relative h-56 bg-gray-100">
+                    <img src="./src/imgs/thumbs/house-img-2.webp" alt="House" class="w-full h-full object-cover"
+                      loading="lazy">
+                    <div
+                      class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-0.5 rounded-full text-xs font-normal uppercase tracking-wide">
+                      Maison
+                    </div>
+                    <button
+                      class="absolute top-3 right-3 bg-gray-800/30 p-2 rounded-full backdrop-blur-md hover:bg-gray-800/50 transition cursor-pointer"
+                      aria-label="wishlist-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="p-5 text-left">
+                    <div class="flex items-center gap-1  text-sm mb-1">
+                      <span class="text-primary"><i class="ri-map-pin-line"></i></span>
+                      Ormeignies
+                    </div>
+                    <h3 class="text-md font-normal mb-4">Maison à vendre</h3>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center mb-4 px-2">
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-building-line"></i>
+                        <span class="font-normal text-xs">3</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-hotel-bed-line"></i>
+                        <span class="font-normal text-xs">2</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-showers-line"></i>
+                        <span class="font-normal text-xs">1</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-drag-move-line"></i>
+                        <span class="font-normal text-xs">110 m²</span>
+                      </div>
+                    </div>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center">
+                      <span class="text-md font-normal">210.000€</span>
+                      PEB Img
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rounded-xl overflow-hidden  shadow-xs bg-white">
+                  <div class="relative h-56 bg-gray-100">
+                    <img src="./src/imgs/thumbs/house-img-3.webp" alt="House" class="w-full h-full object-cover"
+                      loading="lazy">
+                    <div
+                      class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-0.5 rounded-full text-xs font-normal uppercase tracking-wide">
+                      Maison
+                    </div>
+                    <button
+                      class="absolute top-3 right-3 bg-gray-800/30 p-2 rounded-full backdrop-blur-md hover:bg-gray-800/50 transition cursor-pointer"
+                      aria-label="wishlist-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="p-5 text-left">
+                    <div class="flex items-center gap-1  text-sm mb-1">
+                      <span class="text-primary"><i class="ri-map-pin-line"></i></span>
+                      Ormeignies
+                    </div>
+                    <h3 class="text-md font-normal mb-4">Maison à vendre</h3>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center mb-4 px-2">
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-building-line"></i>
+                        <span class="font-normal text-xs">3</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-hotel-bed-line"></i>
+                        <span class="font-normal text-xs">2</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-showers-line"></i>
+                        <span class="font-normal text-xs">1</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-drag-move-line"></i>
+                        <span class="font-normal text-xs">110 m²</span>
+                      </div>
+                    </div>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center">
+                      <span class="text-md font-normal">210.000€</span>
+                      PEB Img
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rounded-xl overflow-hidden  shadow-xs bg-white">
+                  <div class="relative h-56 bg-gray-100">
+                    <img src="./src/imgs/thumbs/house-img-4.webp" alt="House" class="w-full h-full object-cover"
+                      loading="lazy">
+                    <div
+                      class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-0.5 rounded-full text-xs font-normal uppercase tracking-wide">
+                      Maison
+                    </div>
+                    <button
+                      class="absolute top-3 right-3 bg-gray-800/30 p-2 rounded-full backdrop-blur-md hover:bg-gray-800/50 transition cursor-pointer"
+                      aria-label="wishlist-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="p-5 text-left">
+                    <div class="flex items-center gap-1  text-sm mb-1">
+                      <span class="text-primary"><i class="ri-map-pin-line"></i></span>
+                      Ormeignies
+                    </div>
+                    <h3 class="text-md font-normal mb-4">Maison à vendre</h3>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center mb-4 px-2">
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-building-line"></i>
+                        <span class="font-normal text-xs">3</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-hotel-bed-line"></i>
+                        <span class="font-normal text-xs">2</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-showers-line"></i>
+                        <span class="font-normal text-xs">1</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-drag-move-line"></i>
+                        <span class="font-normal text-xs">110 m²</span>
+                      </div>
+                    </div>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center">
+                      <span class="text-md font-normal">210.000€</span>
+                      PEB Img
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center space-x-4">
+            <button
+              class="currentOpportunities-prev-btn text-gray-800 hover:text-primary transition-colors cursor-pointer"
+              aria-label="arrow-button">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+            </button>
+
+            <div
+              class="swiper-pagination currentOpportunities-swiper-pagination !static !w-auto flex items-center gap-2">
+            </div>
+
+            <button
+              class="currentOpportunities-next-btn text-gray-800 hover:text-primary transition-colors cursor-pointer"
+              aria-label="arrow-button">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+        <div class="flex justify-center">
+          <button class="btn btn-dark">
+            Parcourir plus d'annonces
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Product Slider Section--end -->
+
+    <!-- Our Solution Section -->
+    <section class="py-10 md:py-20 lg:py-30">
+      <div class="container">
+        <div class="mb-7 lg:mb-10  lg:max-w-md">
+          <h2 class="text-3xl md:text-6xl mb-3">Nos solutions <br>
+            pour vos projets</h2>
+          <p class=" leading-relaxed">
+            Vendre, acheter ou investir : découvrez comment nous facilitons chaque étape pour rendre votre parcours
+            immobilier simple et efficace.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap lg:flex-nowrap gap-4 ">
+
+          <div x-data="{ open: true }" class="flex flex-col w-full md:w-[calc(50%-1rem)] lg:flex-1">
+
+            <div class="rounded-2xl overflow-hidden mb-6 aspect-[7/5]">
+              <img src="./src/imgs/thumbs/collapse-img-1.webp" alt="Professional Photos"
+                class="w-full h-full object-cover" loading="lazy">
+            </div>
+
+            <button @click="open = !open"
+              class="flex items-center justify-between w-full border-b border-primary pb-3 group cursor-pointer">
+              <span class="text-[22px] font-normal">Photos professionnelles</span>
+
+              <div class="relative w-7 h-7 rounded-full flex items-center justify-center transition-colors duration-300"
+                :class="open ? 'bg-[#C5B896]' : 'bg-black'">
+
+                <i class="ri-subtract-line text-white text-base absolute transition-all duration-300"
+                  :class="open ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-50'"></i>
+
+                <i class="ri-add-line text-white text-base absolute transition-all duration-300"
+                  :class="open ? 'opacity-0 -rotate-90 scale-50' : 'opacity-100 rotate-0 scale-100'"></i>
+              </div>
+            </button>
+
+            <div x-ref="content" class="overflow-hidden transition-all duration-300 ease-in-out"
+              :style="open ? 'max-height: ' + $refs.content.scrollHeight + 'px; opacity: 1;' : 'max-height: 0px; opacity: 0;'">
+              <div class="pt-4 leading-relaxed">
+                <p>
+                  Vous n'avez qu'une seule occasion pour faire bonne impression! Nous mettons notre expertise marketing
+                  et
+                  nos compétences technologiques à votre service pour rendre votre propriété irrésistible aux yeux des
+                  acheteurs.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div x-data="{ open: false }" class="flex flex-col w-full md:w-[calc(50%-1rem)] lg:flex-1">
+
+            <div class="rounded-2xl overflow-hidden mb-6 aspect-[7/5]">
+              <img src="./src/imgs/thumbs/collapse-img-2.webp" alt="Professional Photos"
+                class="w-full h-full object-cover" loading="lazy">
+            </div>
+
+            <button @click="open = !open"
+              class="flex items-center justify-between w-full border-b border-primary pb-3 group cursor-pointer">
+              <span class="text-[22px] font-normal">Mise en scène</span>
+
+              <div class="relative w-7 h-7 rounded-full flex items-center justify-center transition-colors duration-300"
+                :class="open ? 'bg-[#C5B896]' : 'bg-black'">
+
+                <i class="ri-subtract-line text-white text-base absolute transition-all duration-300"
+                  :class="open ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-50'"></i>
+
+                <i class="ri-add-line text-white text-base absolute transition-all duration-300"
+                  :class="open ? 'opacity-0 -rotate-90 scale-50' : 'opacity-100 rotate-0 scale-100'"></i>
+              </div>
+            </button>
+
+            <div x-ref="content" class="overflow-hidden transition-all duration-300 ease-in-out"
+              :style="open ? 'max-height: ' + $refs.content.scrollHeight + 'px; opacity: 1;' : 'max-height: 0px; opacity: 0;'">
+              <div class="pt-4 leading-relaxed">
+                <p>
+                  Vous n'avez qu'une seule occasion pour faire bonne impression! Nous mettons notre expertise marketing
+                  et
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div x-data="{ open: false }" class="flex flex-col w-full md:w-[calc(50%-1rem)] lg:flex-1">
+
+            <div class="rounded-2xl overflow-hidden mb-6 aspect-[7/5]">
+              <img src="./src/imgs/thumbs/collapse-img-3.webp" alt="Professional Photos"
+                class="w-full h-full object-cover" loading="lazy">
+            </div>
+
+            <button @click="open = !open"
+              class="flex items-center justify-between w-full border-b border-primary pb-3 group cursor-pointer">
+              <span class="text-[22px] font-normal">Juridique</span>
+
+              <div class="relative w-7 h-7 rounded-full flex items-center justify-center transition-colors duration-300"
+                :class="open ? 'bg-[#C5B896]' : 'bg-black'">
+
+                <i class="ri-subtract-line text-white text-base absolute transition-all duration-300"
+                  :class="open ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-50'"></i>
+
+                <i class="ri-add-line text-white text-base absolute transition-all duration-300"
+                  :class="open ? 'opacity-0 -rotate-90 scale-50' : 'opacity-100 rotate-0 scale-100'"></i>
+              </div>
+            </button>
+
+            <div x-ref="content" class="overflow-hidden transition-all duration-300 ease-in-out"
+              :style="open ? 'max-height: ' + $refs.content.scrollHeight + 'px; opacity: 1;' : 'max-height: 0px; opacity: 0;'">
+              <div class="pt-4 leading-relaxed">
+                <p>
+                  Vous n'avez qu'une seule occasion pour faire bonne impression! Nous mettons notre expertise marketing
+                  et
+                  nos compétences technologiques à votre service pour rendre votre propriété irrésistible aux yeux des
+                  acheteurs.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </section>
+    <!-- Our Solution Section--end -->
+
+    <!-- Product Slider Section -->
+    <section class="py-10  lg:py-20 bg-light">
+      <div class="container">
+        <div class="mb-7 lg:mb-10">
+          <h2 class="text-3xl md:text-6xl mb-3">Nos biens en location</h2>
+          <p class=" lg:max-w-md leading-relaxed">
+            Voici une selection de nos biens en location
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <div class="swiper rentalProperties mb-8">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="rounded-xl overflow-hidden  shadow-xs bg-white">
+                  <div class="relative h-56 bg-gray-100">
+                    <img src="./src/imgs/thumbs/house-img.webp" alt="House" class="w-full h-full object-cover"
+                      loading="lazy">
+                    <div
+                      class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-0.5 rounded-full text-xs font-normal uppercase tracking-wide">
+                      Maison
+                    </div>
+                    <button
+                      class="absolute top-3 right-3 bg-gray-800/30 p-2 rounded-full backdrop-blur-md hover:bg-gray-800/50 transition cursor-pointer"
+                      aria-label="wishlist-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="p-5 text-left">
+                    <div class="flex items-center gap-1  text-sm mb-1">
+                      <span class="text-primary"><i class="ri-map-pin-line"></i></span>
+                      Ormeignies
+                    </div>
+                    <h3 class="text-md font-normal mb-4">Maison à vendre</h3>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center mb-4 px-2">
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-building-line"></i>
+                        <span class="font-normal text-xs">3</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-hotel-bed-line"></i>
+                        <span class="font-normal text-xs">2</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-showers-line"></i>
+                        <span class="font-normal text-xs">1</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-drag-move-line"></i>
+                        <span class="font-normal text-xs">110 m²</span>
+                      </div>
+                    </div>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center">
+                      <span class="text-md font-normal">210.000€</span>
+                      PEB Img
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rounded-xl overflow-hidden  shadow-xs bg-white">
+                  <div class="relative h-56 bg-gray-100">
+                    <img src="./src/imgs/thumbs/house-img-2.webp" alt="House" class="w-full h-full object-cover"
+                      loading="lazy">
+                    <div
+                      class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-0.5 rounded-full text-xs font-normal uppercase tracking-wide">
+                      Maison
+                    </div>
+                    <button
+                      class="absolute top-3 right-3 bg-gray-800/30 p-2 rounded-full backdrop-blur-md hover:bg-gray-800/50 transition cursor-pointer"
+                      aria-label="wishlist-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="p-5 text-left">
+                    <div class="flex items-center gap-1  text-sm mb-1">
+                      <span class="text-primary"><i class="ri-map-pin-line"></i></span>
+                      Ormeignies
+                    </div>
+                    <h3 class="text-md font-normal mb-4">Maison à vendre</h3>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center mb-4 px-2">
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-building-line"></i>
+                        <span class="font-normal text-xs">3</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-hotel-bed-line"></i>
+                        <span class="font-normal text-xs">2</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-showers-line"></i>
+                        <span class="font-normal text-xs">1</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-drag-move-line"></i>
+                        <span class="font-normal text-xs">110 m²</span>
+                      </div>
+                    </div>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center">
+                      <span class="text-md font-normal">210.000€</span>
+                      PEB Img
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rounded-xl overflow-hidden  shadow-xs bg-white">
+                  <div class="relative h-56 bg-gray-100">
+                    <img src="./src/imgs/thumbs/house-img-3.webp" alt="House" class="w-full h-full object-cover"
+                      loading="lazy">
+                    <div
+                      class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-0.5 rounded-full text-xs font-normal uppercase tracking-wide">
+                      Maison
+                    </div>
+                    <button
+                      class="absolute top-3 right-3 bg-gray-800/30 p-2 rounded-full backdrop-blur-md hover:bg-gray-800/50 transition cursor-pointer"
+                      aria-label="wishlist-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="p-5 text-left">
+                    <div class="flex items-center gap-1  text-sm mb-1">
+                      <span class="text-primary"><i class="ri-map-pin-line"></i></span>
+                      Ormeignies
+                    </div>
+                    <h3 class="text-md font-normal mb-4">Maison à vendre</h3>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center mb-4 px-2">
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-building-line"></i>
+                        <span class="font-normal text-xs">3</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-hotel-bed-line"></i>
+                        <span class="font-normal text-xs">2</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-showers-line"></i>
+                        <span class="font-normal text-xs">1</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-drag-move-line"></i>
+                        <span class="font-normal text-xs">110 m²</span>
+                      </div>
+                    </div>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center">
+                      <span class="text-md font-normal">210.000€</span>
+                      PEB Img
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rounded-xl overflow-hidden  shadow-xs bg-white">
+                  <div class="relative h-56 bg-gray-100">
+                    <img src="./src/imgs/thumbs/house-img-4.webp" alt="House" class="w-full h-full object-cover"
+                      loading="lazy">
+                    <div
+                      class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-0.5 rounded-full text-xs font-normal uppercase tracking-wide">
+                      Maison
+                    </div>
+                    <button
+                      class="absolute top-3 right-3 bg-gray-800/30 p-2 rounded-full backdrop-blur-md hover:bg-gray-800/50 transition cursor-pointer"
+                      aria-label="wishlist-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="p-5 text-left">
+                    <div class="flex items-center gap-1  text-sm mb-1">
+                      <span class="text-primary"><i class="ri-map-pin-line"></i></span>
+                      Ormeignies
+                    </div>
+                    <h3 class="text-md font-normal mb-4">Maison à vendre</h3>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center mb-4 px-2">
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-building-line"></i>
+                        <span class="font-normal text-xs">3</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-hotel-bed-line"></i>
+                        <span class="font-normal text-xs">2</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-showers-line"></i>
+                        <span class="font-normal text-xs">1</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <i class="ri-drag-move-line"></i>
+                        <span class="font-normal text-xs">110 m²</span>
+                      </div>
+                    </div>
+
+                    <hr class="border-gray-100 mb-4">
+
+                    <div class="flex justify-between items-center">
+                      <span class="text-md font-normal">210.000€</span>
+                      PEB Img
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center space-x-4">
+            <button class="rentalProperties-prev-btn text-gray-800 hover:text-primary transition-colors cursor-pointer"
+              aria-label="arrow-button">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+            </button>
+
+            <div class="swiper-pagination rentalProperties-pagination !static !w-auto flex items-center gap-2"></div>
+
+            <button class="rentalProperties-next-btn text-gray-800 hover:text-primary transition-colors cursor-pointer"
+              aria-label="arrow-button">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+        <div class="flex justify-center">
+          <button type="button" class="btn btn-dark">
+            Parcourir plus d'annonces
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Product Slider Section--end -->
+
+    <!-- Work Section -->
+    <section class="py-10 lg:pt-30 md:py-20">
+      <div class="container">
+        <div class="mb-7 lg:mb-10  lg:max-w-lg">
+          <h2 class="text-3xl md:text-6xl mb-3">Comment travaillons-nous ?</h2>
+          <p class="leading-relaxed ">
+            Chez nous, chaque recherche immobilière est une aventure sur-mesure, avec un suivi clair à chaque étape.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+
+          <div
+            class="flex flex-col border border-primary rounded-2xl overflow-hidden shadow-sm w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]">
+            <div class="relative h-54">
+              <img src="./src/imgs/thumbs/work-img-1.webp" alt="Prise de contact" class="w-full h-full object-cover"
+                loading="lazy">
+              <span
+                class="absolute bottom-[-40%] right-4 text-[150px] lg:text-[200px] text-primary leading-none select-none">1</span>
+            </div>
+
+            <div class="p-6 pt-8 flex-grow">
+              <h3 class="text-[22px]  mb-3">Prise de contact</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Rendez-vous découverte sans engagement</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Écoute attentive de vos besoins et de vos envies</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Mise en place d'une stratégie personnalisée</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Transparence et confiance dès le départ</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col border border-primary rounded-2xl overflow-hidden shadow-sm w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]">
+            <div class="relative h-54">
+              <img src="./src/imgs/thumbs/work-img-2.webp" alt="Prise de contact" class="w-full h-full object-cover"
+                loading="lazy">
+              <span
+                class="absolute bottom-[-40%] right-4 text-[150px] lg:text-[200px] text-primary leading-none select-none">2</span>
+            </div>
+
+            <div class="p-6 pt-8 flex-grow">
+              <h3 class="text-[22px]  mb-3">Prise de contact</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Rendez-vous découverte sans engagement</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Écoute attentive de vos besoins et de vos envies</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Mise en place d'une stratégie personnalisée</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Transparence et confiance dès le départ</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col border border-primary rounded-2xl overflow-hidden shadow-sm w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]">
+            <div class="relative h-54">
+              <img src="./src/imgs/thumbs/work-img-3.webp" alt="Prise de contact" class="w-full h-full object-cover"
+                loading="lazy">
+              <span
+                class="absolute bottom-[-40%] right-4 text-[150px] lg:text-[200px] text-primary leading-none select-none">3</span>
+            </div>
+
+            <div class="p-6 pt-8 flex-grow">
+              <h3 class="text-[22px]  mb-3">Prise de contact</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Rendez-vous découverte sans engagement</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Écoute attentive de vos besoins et de vos envies</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Mise en place d'une stratégie personnalisée</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ri-check-line text-[#C5B896] text-xl mt-0.5"></i>
+                  <span>Transparence et confiance dès le départ</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </section>
+    <!-- Work Section--end -->
+
+    <!-- 4 Agencies 1 Team Section  -->
+    <section class="py-10 md:py-20">
+      <div class="container">
+        <div class="flex flex-wrap lg:max-w-5xl mx-auto justify-between items-center gap-10 md:gap-y-0">
+          <div class="w-full md:w-4/12">
+            <div class="block">
+              <h2 class="text-3xl md:text-6xl mb-3 leading-tight">4 agences,
+                1 équipe</h2>
+              <p class="leading-relaxed mb-6">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore
+              </p>
+              <a href="" class="btn btn-dark">
+                Prendre rendez-vous
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-7/12">
+            <div class="text-center">
+              <img src="./src/imgs/thumbs/map.webp" class="inline-block max-w-full" alt="map-image" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 4 Agencies 1 Team Section  -->
+
+    <!-- Real state and news Section -->
+    <section class="py-10 md:py-20 ">
+      <div class="container">
+        <div class="mb-7 lg:mb-10  lg:max-w-lg">
+          <h2 class="text-3xl md:text-6xl mb-3">Actualités & <br class="hidden lg:block">
+            astuces immo</h2>
+          <p class="leading-relaxed ">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          </p>
+        </div>
+
+        <div class="flex flex-col md:flex-row flex-wrap justify-center gap-6 lg:gap-4 mb-8">
+
+          <div
+            class="group flex flex-col bg-light rounded-[10px] overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]">
+
+            <div class="relative overflow-hidden h-[210px] lg:h-[248px]">
+              <img src="./src/imgs/thumbs/news-1.webp" alt="Real Estate"
+                class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                loading="lazy">
+              <div class="absolute bottom-0 left-0 w-full h-1 bg-primary"></div>
+            </div>
+
+            <div class="p-6 flex flex-col flex-grow">
+              <p class="text-gray-400 text-xs mb-3">Publié le 09.09.2025</p>
+
+              <a href="#" class="hover:text-[#C5A37D] transition-colors duration-200">
+                <h3 class="text-md font-normal text-gray-900 leading-tight mb-4 line-clamp-2">
+                  Comment déterminer la valeur de votre bien immobi...
+                </h3>
+              </a>
+
+              <div class="mt-auto flex items-center justify-between">
+                <a href="#" class="flex items-center group/author">
+                  <img src="./src/imgs/thumbs/author-1.webp" alt="Abraham Besso"
+                    class="w-15  h-15 rounded-full object-cover mr-3 border border-gray-100" loading="lazy">
+                  <div>
+                    <p class="text-sm font-semibold text-gray-900 group-hover/author:underline">Abraham Besso</p>
+                    <p class="text-xs text-gray-500">Directeur d'agence</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="mt-4 border-t border-gray-100 flex items-center justify-between text-gray-400 text-xs">
+                <div class="flex items-center space-x-1 px-2 py-1 bg-white rounded-full">
+                  <span><i class="ri-heart-line"></i></span> <span>3</span>
+                </div>
+                <p>4 min de lecture</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="group flex flex-col bg-light rounded-[10px] overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]">
+
+            <div class="relative overflow-hidden h-[210px] lg:h-[248px]">
+              <img src="./src/imgs/thumbs/news-2.webp" alt="Real Estate"
+                class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                loading="lazy">
+              <div class="absolute bottom-0 left-0 w-full h-1 bg-primary"></div>
+            </div>
+
+            <div class="p-6 flex flex-col flex-grow">
+              <p class="text-gray-400 text-xs mb-3">Publié le 01.09.2025</p>
+
+              <a href="#" class="hover:text-[#C5A37D] transition-colors duration-200">
+                <h3 class="text-md font-normal text-gray-900 leading-tight mb-4 line-clamp-2">
+                  Les 5 erreurs à éviter lors de l’achat de votre premier bien
+                </h3>
+              </a>
+
+              <div class="mt-auto flex items-center justify-between">
+                <a href="#" class="flex items-center group/author">
+                  <img src="./src/imgs/thumbs/author-2.webp" alt="Didier Clermont"
+                    class="w-15  h-15 rounded-full object-cover mr-3 border border-gray-100" loading="lazy">
+                  <div>
+                    <p class="text-sm font-semibold text-gray-900 group-hover/author:underline">Didier Clermont</p>
+                    <p class="text-xs text-gray-500">Agent immobilier</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="mt-4 border-t border-gray-100 flex items-center justify-between text-gray-400 text-xs">
+                <div class="flex items-center space-x-1 px-2 py-1 bg-white rounded-full">
+                  <span><i class="ri-heart-line"></i></span> <span>13</span>
+                </div>
+                <p>6 min de lecture</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="group flex flex-col bg-light rounded-[10px] overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]">
+
+            <div class="relative overflow-hidden h-[210px] lg:h-[248px]">
+              <img src="./src/imgs/thumbs/news-3.webp" alt="Real Estate"
+                class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                loading="lazy">
+              <div class="absolute bottom-0 left-0 w-full h-1 bg-primary"></div>
+            </div>
+
+            <div class="p-6 flex flex-col flex-grow">
+              <p class="text-gray-400 text-xs mb-3">Publié le 23.08.2025</p>
+
+              <a href="#" class="hover:text-[#C5A37D] transition-colors duration-200">
+                <h3 class="text-md font-normal text-gray-900 leading-tight mb-4 line-clamp-2">
+                  Lorem ipsum dolor es sita amer cos estudallea portoum
+                </h3>
+              </a>
+
+              <div class="mt-auto flex items-center justify-between">
+                <a href="#" class="flex items-center group/author">
+                  <img src="./src/imgs/thumbs/author-1.webp" alt="Didier Clermont"
+                    class="w-15  h-15 rounded-full object-cover mr-3 border border-gray-100" loading="lazy">
+                  <div>
+                    <p class="text-sm font-semibold text-gray-900 group-hover/author:underline">Didier Clermont</p>
+                    <p class="text-xs text-gray-500">Agent immobilier</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="mt-4 border-t border-gray-100 flex items-center justify-between text-gray-400 text-xs">
+                <div class="flex items-center space-x-1 px-2 py-1 bg-white rounded-full">
+                  <span><i class="ri-heart-line"></i></span> <span>13</span>
+                </div>
+                <p>4 min de lecture</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center">
+          <a href="" class="btn btn-dark">Parcourir tous les articles</a>
+        </div>
+
+      </div>
+    </section>
+    <!-- Real state and news Section--end -->
+
+    <!-- faq section  -->
+    <section class="py-12 md:py-16 lg:py-20 bg-light">
+      <div class="container">
+        <div class="max-w-[768px] mx-auto">
+          <!-- section head -->
+          <div class="mb-10">
+            <h2 class="text-3xl lg:text-6xl font-semibold leading-[1.15] mb-3">
+              Tout ce que vous devez savoir
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur
+              sadipscing elitr, sed diam nonumy.
+            </p>
+          </div>
+
+          <!-- faq content -->
+          <div class="mb-8">
+            <!-- faq accordion -->
+            <div class="" x-data="{selected:null}">
+              <!-- faq accordion item -->
+              <div class="relative border-b border-primary">
+                <button type="button" class="w-full py-6 text-left cursor-pointer"
+                  @click="selected !== 1 ? selected = 1 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span class="text-md leading-[25px]">
+                      Quels frais dois-je prévoir en
+                      plus du prix du bien ?
+                    </span>
+
+                    <div
+                      class="relative shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors"
+                      :class="selected == 1 ? 'bg-[#C5B896]' : 'bg-black'">
+                      <div class="w-3.5 h-0.5 bg-white absolute transition-transform duration-300"
+                        :class="selected == 1 ? 'rotate-180' : 'rotate-0'"></div>
+                      <div class="w-3.5 h-0.5 bg-white absolute transition-transform duration-300"
+                        :class="selected == 1 ? 'rotate-[360deg]' : 'rotate-90'"></div>
+                    </div>
+                  </div>
+                </button>
+                <div class="relative overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+                  x-ref="faqAccordionItemOne"
+                  x-bind:style="selected == 1 ? 'max-height: ' + $refs.faqAccordionItemOne.scrollHeight + 'px' : ''">
+                  <div class="px-6 pb-6 text-base">
+                    <p>
+                      Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit.
+                      Dicta possimus placeat sint?
+                      Voluptates quis eaque, error id
+                      iste a repellendus!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- faq accordion item -->
+              <div class="relative border-b border-primary">
+                <button type="button" class="w-full py-6 text-left cursor-pointer"
+                  @click="selected !== 2 ? selected = 2 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span class="text-md leading-[25px]">
+                      Pouvez-vous m’aider si je n’ai
+                      pas encore trouvé de financement
+                      ?
+                    </span>
+                    <div
+                      class="relative shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors"
+                      :class="selected == 2 ? 'bg-[#C5B896]' : 'bg-black'">
+                      <div class="w-3.5 h-0.5 bg-white absolute transition-transform duration-300"
+                        :class="selected == 2 ? 'rotate-180' : 'rotate-0'"></div>
+                      <div class="w-3.5 h-0.5 bg-white absolute transition-transform duration-300"
+                        :class="selected == 2 ? 'rotate-[360deg]' : 'rotate-90'"></div>
+                    </div>
+                  </div>
+                </button>
+                <div class="relative overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+                  x-ref="faqAccordionItemTwo"
+                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.faqAccordionItemTwo.scrollHeight + 'px' : ''">
+                  <div class="px-6 pb-6 text-base">
+                    <p>
+                      Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit.
+                      Aspernatur facere a sapiente
+                      maiores reiciendis iste suscipit
+                      corporis quibusdam, tempore
+                      aliquam.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- faq accordion item -->
+              <div class="relative border-b border-primary">
+                <button type="button" class="w-full py-6 text-left cursor-pointer"
+                  @click="selected !== 3 ? selected = 3 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span class="text-md leading-[25px]">
+                      Pouvez-vous m’aider si je n’ai
+                      pas encore trouvé de financement
+                      ?
+                    </span>
+                    <div
+                      class="relative shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors"
+                      :class="selected == 3 ? 'bg-[#C5B896]' : 'bg-black'">
+                      <div class="w-3.5 h-0.5 bg-white absolute transition-transform duration-300"
+                        :class="selected == 3 ? 'rotate-180' : 'rotate-0'"></div>
+                      <div class="w-3.5 h-0.5 bg-white absolute transition-transform duration-300"
+                        :class="selected == 3 ? 'rotate-[360deg]' : 'rotate-90'"></div>
+                    </div>
+                  </div>
+                </button>
+                <div class="relative overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+                  x-ref="faqAccordionItemThree"
+                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.faqAccordionItemThree.scrollHeight + 'px' : ''">
+                  <div class="px-6 pb-6 text-base">
+                    <p>
+                      Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit.
+                      Aspernatur facere a sapiente
+                      maiores reiciendis iste suscipit
+                      corporis quibusdam, tempore
+                      aliquam.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- section button -->
+          <div>
+            <button class="btn btn-dark">
+              Découvrir toutes les questions
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- faq section--end  -->
+
+    <!-- choose section  -->
+    <section class="py-12 md:py-16 lg:py-20">
+      <div class="container">
+        <div>
+          <!-- section head -->
+          <div class="max-w-[572px] mb-10">
+            <h2 class="text-3xl lg:text-6xl font-semibold leading-[1.15] mb-3">
+              Pourquoi choisir Century21 pour votre prochain
+              achat immobilier ?
+            </h2>
+            <p class="max-w-[472px]">
+              Lorem ipsum dolor sit amet, consetetur
+              sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore
+            </p>
+          </div>
+
+          <!-- section content -->
+          <div class="flex flex-col lg:flex-row gap-12.5 lg:gap-0 lg:divide-x lg:divide-primary mb-10.5">
+            <!-- choose item -->
+            <div class="flex-1 lg:px-5 xl:px-9 2xl:px-13 first:pl-0">
+              <div class="flex flex-col">
+                <!-- item icon -->
+                <span class="w-18 h-18 flex items-end mb-4">
+                  <img src="./src/imgs/icons/local-location.svg" alt="Location" loading="lazy">
+                </span>
+
+                <!-- item content -->
+                <div>
+                  <h3 class="font-[22px] font-semibold leading-[1.14] mb-2.5">
+                    Experts du
+                    <br />
+                    marché local
+                  </h3>
+
+                  <p>
+                    Nous connaissons chaque quartier et
+                    vous donnons accès à des
+                    opportunités exclusives et ce,
+                    depuis plus de 15 ans.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- choose item -->
+            <div class="flex-1 lg:px-5 xl:px-9 2xl:px-13">
+              <div class="flex flex-col">
+                <!-- item icon -->
+                <span class="w-18 h-18 flex items-end mb-4">
+                  <img src="./src/imgs/icons/hand-shake.svg" alt="hand shake icon" loading="lazy">
+                </span>
+
+                <!-- item content -->
+                <div>
+                  <h3 class="font-[22px] font-semibold leading-[1.14] mb-2.5">
+                    Un accompagnement
+                    <br />
+                    sur-mesure
+                  </h3>
+
+                  <p>
+                    Votre projet est unique : nous
+                    sélectionnons uniquement les biens
+                    qui vous correspondent.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- choose item -->
+            <div class="flex-1 lg:px-5 xl:px-9 2xl:px-13 last:pr-0">
+              <div class="flex flex-col">
+                <!-- item icon -->
+                <span class="w-18 h-18 flex items-end mb-4">
+                  <img src="./src/imgs/icons/engagement-transparency.svg" alt="transparency icon" loading="lazy">
+                </span>
+
+                <!-- item content -->
+                <div>
+                  <h3 class="font-[22px] font-semibold leading-[1.14] mb-2.5">
+                    Engagement et
+                    <br class="hidden md:inline-block" />
+                    transparence
+                  </h3>
+
+                  <p>
+                    Transparent et rigoureux à chaque
+                    étape, on s’occupe de tout : zéro
+                    stress, zéro paperasse, avancez en
+                    sérénité.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- section button -->
+          <div>
+            <button class="btn btn-dark">
+              Explorer tous les biens à vendre
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- choose section--end  -->
+
+    <!-- cta section  -->
+    <section class="pb-31">
+      <div class="container">
+        <div class="max-w-[866px] mx-auto">
+          <div
+            class="bg-[url(/src/imgs/thumbs/cta-bg.jpg)] bg-no-repeat bg-center bg-cover pt-50 sm:pt-40 pb-9 md:py-31 px-6 md:px-12 lg:px-16 rounded-[10px] flex flex-col md:flex-row md:items-end gap-11.5 relative z-10 overflow-hidden after:content-[''] after:absolute after:left-0 after:top-0 after:w-full after:h-full after:bg-gradient-to-b after:from-black/0 after:to-black after:-z-10">
+            <div class="flex-1">
+              <h2 class="text-white text-3xl font-semibold mb-3">
+                L'actu et les biens, avant tout le monde ?
+              </h2>
+              <p class="text-white text-base">
+                Recevez en avant-première nos nouveautés et
+                nos biens disponibles avant même qu'ils ne
+                soient mis en ligne !
+              </p>
+            </div>
+            <div class="flex-1">
+              <form action="#" class="flex flex-col gap-4">
+                <div>
+                  <input type="email" placeholder="Votre email" required
+                    class="w-full h-10 py-2 px-5 rounded-[70px] text-base text-black border border-transparent bg-white shadow-[0_0_6px_rgba(0,0,0,0.1)] transition-all duration-300 ease-in-out placeholder:text-black focus:outline-none focus:border-primary" />
+                </div>
+                <div>
+                  <button class="btn btn-orange">
+                    J'en profite
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- cta section--end -->
+
+    <!-- testimonial section  -->
+    <section class="py-12 md:py-16 lg:py-20">
+      <div class="container">
+        <div>
+          <!-- section head -->
+          <div class="flex flex-col md:flex-row md:justify-between gap-7.5 mb-6">
+            <div>
+              <h2 class="text-3xl lg:text-6xl font-semibold mb-3">
+                Témoignages
+              </h2>
+              <p>
+                Voyons ce que les gens pensent de Century21
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center gap-2">
+              <h3 class="text-lg font-medium">Excellent</h3>
+              <div class="flex justify-center items-center gap-1">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22.652"
+                    height="21.102" viewBox="0 0 22.652 21.102">
+                    <defs>
+                      <clipPath id="clip-path">
+                        <rect id="Rectangle_1218" data-name="Rectangle 1218" width="22.652" height="21.102"
+                          transform="translate(0 0)" fill="#ffba00" />
+                      </clipPath>
+                    </defs>
+                    <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                      <path id="Path_1485" data-name="Path 1485"
+                        d="M10.428.662a.946.946,0,0,1,1.8,0l1.937,6.177a.947.947,0,0,0,.921.662l6.6-.125A.945.945,0,0,1,22.236,9.1l-5.367,3.62a.947.947,0,0,0-.361,1.1l2.154,6.01a.946.946,0,0,1-1.449,1.082l-5.326-3.909a.945.945,0,0,0-1.118,0L5.439,20.915A.945.945,0,0,1,3.99,19.833l2.154-6.01a.947.947,0,0,0-.361-1.1L.416,9.106A.946.946,0,0,1,.963,7.378l6.6.125a.947.947,0,0,0,.921-.662Z"
+                        transform="translate(0 0)" fill="#ffba00" />
+                    </g>
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22.652"
+                    height="21.102" viewBox="0 0 22.652 21.102">
+                    <defs>
+                      <clipPath id="clip-path">
+                        <rect id="Rectangle_1218" data-name="Rectangle 1218" width="22.652" height="21.102"
+                          transform="translate(0 0)" fill="#ffba00" />
+                      </clipPath>
+                    </defs>
+                    <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                      <path id="Path_1485" data-name="Path 1485"
+                        d="M10.428.662a.946.946,0,0,1,1.8,0l1.937,6.177a.947.947,0,0,0,.921.662l6.6-.125A.945.945,0,0,1,22.236,9.1l-5.367,3.62a.947.947,0,0,0-.361,1.1l2.154,6.01a.946.946,0,0,1-1.449,1.082l-5.326-3.909a.945.945,0,0,0-1.118,0L5.439,20.915A.945.945,0,0,1,3.99,19.833l2.154-6.01a.947.947,0,0,0-.361-1.1L.416,9.106A.946.946,0,0,1,.963,7.378l6.6.125a.947.947,0,0,0,.921-.662Z"
+                        transform="translate(0 0)" fill="#ffba00" />
+                    </g>
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22.652"
+                    height="21.102" viewBox="0 0 22.652 21.102">
+                    <defs>
+                      <clipPath id="clip-path">
+                        <rect id="Rectangle_1218" data-name="Rectangle 1218" width="22.652" height="21.102"
+                          transform="translate(0 0)" fill="#ffba00" />
+                      </clipPath>
+                    </defs>
+                    <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                      <path id="Path_1485" data-name="Path 1485"
+                        d="M10.428.662a.946.946,0,0,1,1.8,0l1.937,6.177a.947.947,0,0,0,.921.662l6.6-.125A.945.945,0,0,1,22.236,9.1l-5.367,3.62a.947.947,0,0,0-.361,1.1l2.154,6.01a.946.946,0,0,1-1.449,1.082l-5.326-3.909a.945.945,0,0,0-1.118,0L5.439,20.915A.945.945,0,0,1,3.99,19.833l2.154-6.01a.947.947,0,0,0-.361-1.1L.416,9.106A.946.946,0,0,1,.963,7.378l6.6.125a.947.947,0,0,0,.921-.662Z"
+                        transform="translate(0 0)" fill="#ffba00" />
+                    </g>
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22.652"
+                    height="21.102" viewBox="0 0 22.652 21.102">
+                    <defs>
+                      <clipPath id="clip-path">
+                        <rect id="Rectangle_1218" data-name="Rectangle 1218" width="22.652" height="21.102"
+                          transform="translate(0 0)" fill="#ffba00" />
+                      </clipPath>
+                    </defs>
+                    <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                      <path id="Path_1485" data-name="Path 1485"
+                        d="M10.428.662a.946.946,0,0,1,1.8,0l1.937,6.177a.947.947,0,0,0,.921.662l6.6-.125A.945.945,0,0,1,22.236,9.1l-5.367,3.62a.947.947,0,0,0-.361,1.1l2.154,6.01a.946.946,0,0,1-1.449,1.082l-5.326-3.909a.945.945,0,0,0-1.118,0L5.439,20.915A.945.945,0,0,1,3.99,19.833l2.154-6.01a.947.947,0,0,0-.361-1.1L.416,9.106A.946.946,0,0,1,.963,7.378l6.6.125a.947.947,0,0,0,.921-.662Z"
+                        transform="translate(0 0)" fill="#ffba00" />
+                    </g>
+                  </svg>
+                </span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22.652"
+                    height="21.102" viewBox="0 0 22.652 21.102">
+                    <defs>
+                      <clipPath id="clip-path">
+                        <rect id="Rectangle_1218" data-name="Rectangle 1218" width="22.652" height="21.102"
+                          transform="translate(0 0)" fill="#ffba00" />
+                      </clipPath>
+                    </defs>
+                    <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                      <path id="Path_1485" data-name="Path 1485"
+                        d="M10.428.662a.946.946,0,0,1,1.8,0l1.937,6.177a.947.947,0,0,0,.921.662l6.6-.125A.945.945,0,0,1,22.236,9.1l-5.367,3.62a.947.947,0,0,0-.361,1.1l2.154,6.01a.946.946,0,0,1-1.449,1.082l-5.326-3.909a.945.945,0,0,0-1.118,0L5.439,20.915A.945.945,0,0,1,3.99,19.833l2.154-6.01a.947.947,0,0,0-.361-1.1L.416,9.106A.946.946,0,0,1,.963,7.378l6.6.125a.947.947,0,0,0,.921-.662Z"
+                        transform="translate(0 0)" fill="#ffba00" />
+                    </g>
+                  </svg>
+                </span>
+              </div>
+              <p class="text-[13px]">Basé sur 151 avis</p>
+              <div>
+                <img src="./src/imgs/logos/google-logo.svg" alt="Google" class="w-23.5" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- slider Content -->
+          <div class="mb-6">
+            <!-- testimonial slider -->
+            <div class="swiper testimonial-swiper mb-6">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <!-- testimonial item -->
+                  <div class="p-6 pb-12 rounded-lg bg-light overflow-hidden">
+                    <!-- testimonial head -->
+                    <div class="flex items-center gap-5.5 mb-4">
+                      <div class="w-18 h-18 relative">
+                        <!-- client img -->
+                        <img src="./src/imgs/thumbs/client-01.png" alt="Jean Charconnet"
+                          class="w-full h-full rounded-full" loading="lazy">
+
+                        <!-- client designation icon -->
+                        <img src="./src/imgs/icons/clien-des-icon.svg" alt="designation"
+                          class="w-7 h-7 rounded-full absolute right-0 bottom-0" loading="lazy">
+                      </div>
+
+                      <div>
+                        <h4 class="font-[15px] font-bold mb-2">
+                          jean charconnet
+                        </h4>
+                        <div class="flex items-center gap-0.75">
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- testimonial text -->
+                    <p class="text-[15px] leading-[1.67]">
+                      Bravo. Professionnel, gentil et
+                      à l’écoute de nos besoin. Sophie
+                      a très bien compris ce que nous
+                      cherchions et n’arrivions pas à
+                      trouver après plusieurs visites
+                      avec différentes agences. Elle a
+                      été très efficace et nous sommes
+                      logés. Je conseille vivement ses
+                      services, et son sourire plein
+                      de franchise. Une personne en or
+                      massif.
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <!-- testimonial item -->
+                  <div class="p-6 pb-12 rounded-lg bg-light overflow-hidden">
+                    <!-- testimonial head -->
+                    <div class="flex items-center gap-5.5 mb-4">
+                      <div class="w-18 h-18 relative">
+                        <!-- client img -->
+                        <img src="./src/imgs/thumbs/client-01.png" alt="Jean Charconnet"
+                          class="w-full h-full rounded-full" loading="lazy">
+
+                        <!-- client designation icon -->
+                        <img src="./src/imgs/icons/clien-des-icon.svg" alt="designation"
+                          class="w-7 h-7 rounded-full absolute right-0 bottom-0" loading="lazy">
+                      </div>
+
+                      <div>
+                        <h4 class="font-[15px] font-bold mb-2">
+                          jean charconnet
+                        </h4>
+                        <div class="flex items-center gap-0.75">
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- testimonial text -->
+                    <p class="text-[15px] leading-[1.67]">
+                      Bravo. Professionnel, gentil et
+                      à l’écoute de nos besoin. Sophie
+                      a très bien compris ce que nous
+                      cherchions et n’arrivions pas à
+                      trouver après plusieurs visites
+                      avec différentes agences. Elle a
+                      été très efficace et nous sommes
+                      logés. Je conseille vivement ses
+                      services, et son sourire plein
+                      de franchise. Une personne en or
+                      massif.
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <!-- testimonial item -->
+                  <div class="p-6 pb-12 rounded-lg bg-light overflow-hidden">
+                    <!-- testimonial head -->
+                    <div class="flex items-center gap-5.5 mb-4">
+                      <div class="w-18 h-18 relative">
+                        <!-- client img -->
+                        <img src="./src/imgs/thumbs/client-01.png" alt="Jean Charconnet"
+                          class="w-full h-full rounded-full" loading="lazy">
+
+                        <!-- client designation icon -->
+                        <img src="./src/imgs/icons/clien-des-icon.svg" alt="designation"
+                          class="w-7 h-7 rounded-full absolute right-0 bottom-0" loading="lazy">
+                      </div>
+
+                      <div>
+                        <h4 class="font-[15px] font-bold mb-2">
+                          jean charconnet
+                        </h4>
+                        <div class="flex items-center gap-0.75">
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- testimonial text -->
+                    <p class="text-[15px] leading-[1.67]">
+                      Bravo. Professionnel, gentil et
+                      à l’écoute de nos besoin. Sophie
+                      a très bien compris ce que nous
+                      cherchions et n’arrivions pas à
+                      trouver après plusieurs visites
+                      avec différentes agences. Elle a
+                      été très efficace et nous sommes
+                      logés. Je conseille vivement ses
+                      services, et son sourire plein
+                      de franchise. Une personne en or
+                      massif.
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <!-- testimonial item -->
+                  <div class="p-6 pb-12 rounded-lg bg-light overflow-hidden">
+                    <!-- testimonial head -->
+                    <div class="flex items-center gap-5.5 mb-4">
+                      <div class="w-18 h-18 relative">
+                        <!-- client img -->
+                        <img src="./src/imgs/thumbs/client-01.png" alt="Jean Charconnet"
+                          class="w-full h-full rounded-full" loading="lazy">
+
+                        <!-- client designation icon -->
+                        <img src="./src/imgs/icons/clien-des-icon.svg" alt="designation"
+                          class="w-7 h-7 rounded-full absolute right-0 bottom-0" loading="lazy">
+                      </div>
+
+                      <div>
+                        <h4 class="font-[15px] font-bold mb-2">
+                          jean charconnet
+                        </h4>
+                        <div class="flex items-center gap-0.75">
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- testimonial text -->
+                    <p class="text-[15px] leading-[1.67]">
+                      Bravo. Professionnel, gentil et
+                      à l’écoute de nos besoin. Sophie
+                      a très bien compris ce que nous
+                      cherchions et n’arrivions pas à
+                      trouver après plusieurs visites
+                      avec différentes agences. Elle a
+                      été très efficace et nous sommes
+                      logés. Je conseille vivement ses
+                      services, et son sourire plein
+                      de franchise. Une personne en or
+                      massif.
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <!-- testimonial item -->
+                  <div class="p-6 pb-12 rounded-lg bg-light overflow-hidden">
+                    <!-- testimonial head -->
+                    <div class="flex items-center gap-5.5 mb-4">
+                      <div class="w-18 h-18 relative">
+                        <!-- client img -->
+                        <img src="./src/imgs/thumbs/client-01.png" alt="Jean Charconnet"
+                          class="w-full h-full rounded-full" loading="lazy">
+
+                        <!-- client designation icon -->
+                        <img src="./src/imgs/icons/clien-des-icon.svg" alt="designation"
+                          class="w-7 h-7 rounded-full absolute right-0 bottom-0" loading="lazy">
+                      </div>
+
+                      <div>
+                        <h4 class="font-[15px] font-bold mb-2">
+                          jean charconnet
+                        </h4>
+                        <div class="flex items-center gap-0.75">
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                          <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="14.152" height="13.184" viewBox="0 0 14.152 13.184">
+                              <defs>
+                                <clipPath id="clip-path">
+                                  <rect id="Rectangle_1218" data-name="Rectangle 1218" width="14.152" height="13.183"
+                                    transform="translate(0 0)" fill="#ffba00" />
+                                </clipPath>
+                              </defs>
+                              <g id="Group_4242" data-name="Group 4242" clip-path="url(#clip-path)">
+                                <path id="Path_1485" data-name="Path 1485"
+                                  d="M6.515.414a.591.591,0,0,1,1.127,0l1.21,3.859a.592.592,0,0,0,.575.414l4.124-.078a.591.591,0,0,1,.341,1.08L10.539,7.949a.592.592,0,0,0-.226.689l1.346,3.755a.591.591,0,0,1-.905.676L7.427,10.627a.59.59,0,0,0-.7,0L3.4,13.067a.591.591,0,0,1-.905-.676L3.839,8.636a.592.592,0,0,0-.226-.686L.26,5.689A.591.591,0,0,1,.6,4.609l4.124.078A.592.592,0,0,0,5.3,4.274Z"
+                                  transform="translate(0 0)" fill="#ffba00" />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- testimonial text -->
+                    <p class="text-[15px] leading-[1.67]">
+                      Bravo. Professionnel, gentil et
+                      à l’écoute de nos besoin. Sophie
+                      a très bien compris ce que nous
+                      cherchions et n’arrivions pas à
+                      trouver après plusieurs visites
+                      avec différentes agences. Elle a
+                      été très efficace et nous sommes
+                      logés. Je conseille vivement ses
+                      services, et son sourire plein
+                      de franchise. Une personne en or
+                      massif.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- slider buttons & paginations -->
+            <div class="flex items-center justify-center space-x-4">
+              <button
+                class="testimonial-prev-btn text-gray-800 hover:text-primary transition-all duration-300 ease-in-out cursor-pointer"
+                aria-label="arrow-button">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+              </button>
+
+              <div class="testimonial-swiper-pagination !static !w-auto flex items-center gap-2"></div>
+
+              <button
+                class="testimonial-next-btn text-gray-800 hover:text-primary transition-all duration-300 ease-in-out cursor-pointer"
+                aria-label="arrow-button">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- section button -->
+          <div class="text-center">
+            <button class="btn btn-dark">
+              Lire plus d'avis
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- testimonial section--end  -->
+
+  </main>
+  <!-- main--end -->
+
+  <!-- footer -->
+  <footer>
+    <div class="container mx-auto">
+      <div class="pt-10 pb-10 flex flex-col gap-18 border-t border-primary md:gap-14 lg:pt-8 lg:pb-9">
+        <!-- footer top -->
+        <div class="flex items-end justify-between gap-12">
+          <!-- footer logo -->
+          <div class="max-w-31">
+            <img src="./src/imgs/logos/century21-box-logo.svg" alt="CENTURY 21" class="w-full" loading="lazy">
+          </div>
+
+          <div class="flex gap-8">
+            <!-- button for md and upper devices -->
+            <button class="btn btn-dark hidden md:inline-flex">
+              Faire estimer mon bien
+            </button>
+
+            <!-- footer social links -->
+            <div class="flex items-center gap-[9px]">
+              <a href="#" target="_blank" aria-label="facebook-icon"
+                class="w-11.5 h-11.5 inline-flex justify-center items-center rounded-[10px] bg-primary transition-all duration-300 ease-in-out hover:bg-dark">
+                <img src="./src/imgs/icons/facebook.svg" alt="Facebook" class="max-w-5 max-h-4.5" loading="lazy">
+              </a>
+              <a href="#" target="_blank" aria-label="instagram-icon"
+                class="w-11.5 h-11.5 inline-flex justify-center items-center rounded-[10px] bg-primary transition-all duration-300 ease-in-out hover:bg-dark">
+                <img src="./src/imgs/icons/instagram.svg" alt="Instagram" class="max-w-5 max-h-4.5" loading="lazy">
+              </a>
+              <a href="#" target="_blank" aria-label="youtube-icon"
+                class="w-11.5 h-11.5 inline-flex justify-center items-center rounded-[10px] bg-primary transition-all duration-300 ease-in-out hover:bg-dark">
+                <img src="./src/imgs/icons/youtube.svg" alt="Youtube" class="max-w-5 max-h-4.5" loading="lazy">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- footer middle -->
+        <div class="flex flex-col gap-12 lg:flex-row lg:justify-between">
+          <!-- button for small devices -->
+          <button class="btn btn-dark md:hidden">
+            Faire estimer mon bien
+          </button>
+
+          <!-- footer item (contact) -->
+          <div class="max-w-80 w-full">
+            <h2 class="text-base text-primary font-semibold mb-4.5">
+              Agences Century21 Clermont
+            </h2>
+
+            <div>
+              <p>Obtenir l'itinéraire</p>
+              <p>Contacter par téléphone</p>
+              <p>Envoyer un email</p>
+            </div>
+          </div>
+
+          <!-- footer item (navigation) -->
+          <div class="max-w-80 w-full">
+            <h2 class="text-base text-primary font-semibold mb-4.5">
+              Navigation
+            </h2>
+
+            <nav class="flex justify-between gap-3">
+              <ul>
+                <li>
+                  <a href="#"
+                    class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">A
+                    vendre</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">A
+                    louer</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">Blog</a>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="#"
+                    class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">L'agence</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">Foire aux
+                    questions</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- footer item (useful links) -->
+          <div class="max-w-80 w-full">
+            <h2 class="text-base text-primary font-semibold mb-4.5">
+              Liens utiles
+            </h2>
+
+            <nav class="flex justify-between gap-3">
+              <ul>
+                <li>
+                  <a href="#"
+                    class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">Événements
+                    à venir</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">Mes biens
+                    favoris</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- footer bottom -->
+        <div class="flex flex-col gap-6">
+          <!-- footer legal -->
+          <div>
+            <ul
+              class="lg:flex lg:gap-9 lg:[&>li]:relative lg:[&>li]:after:content-[''] lg:[&>li]:after:absolute lg:[&>li]:after:right-[-18px] lg:[&>li]:after:top-1/2 lg:[&>li]:after:-translate-y-1/2 lg:[&>li]:after:w-0.5 lg:[&>li]:after:h-[40%] lg:[&>li]:after:bg-primary lg:[&>li:last-child]:after:hidden">
+              <li class="relative">
+                <a href="#"
+                  class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">Conditions
+                  d'utilisation</a>
+              </li>
+              <li class="relative">
+                <a href="#"
+                  class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">Déclaration
+                  de confidentialité</a>
+              </li>
+              <li class="relative">
+                <a href="#"
+                  class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">Politique de
+                  cookies</a>
+              </li>
+              <li class="relative">
+                <a href="#"
+                  class="text-sm leading-[2.07] transition-all duration-300 ease-in-out hover:text-primary">Code
+                  déontologique de l'IPI</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- footer contact info -->
+          <p class="text-xs leading-[1.92]">
+            Agent immobilier agréé IPI sous le numéro 507.823 -
+            N° entreprise : BE-0477.730.839 - rpm Bruxelles -
+            Instance de contrôle: BIV, rue du Luxemburg 16B,
+            1000 Bruxelles - Soumis au code déontologique de l’
+            IPI: www.IPI.be. Century21 Clermont - Clermont
+            invest SPRL - Adresse Siège Social : Rue du moulin
+            21 -7800 Ath - Compte tiers IBAN numéro
+            BE37.3701.1870.2728 (BIC: BBRUBEBB) - Assuré auprès
+            de AXA police n°7304010470033
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer--end -->
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>
