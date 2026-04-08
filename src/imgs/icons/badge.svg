@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34.912" height="46.175" viewBox="0 0 34.912 46.175">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1500" data-name="Rectangle 1500" width="34.912" height="46.175" transform="translate(-1 -1)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_5872" data-name="Group 5872" transform="translate(1 1)">
+    <g id="Group_5871" data-name="Group 5871" clip-path="url(#clip-path)">
+      <path id="Path_1537" data-name="Path 1537" d="M33.177,16.113c0,1.632-2.62,2.83-3.1,4.3-.5,1.526.9,4.032-.022,5.3s-3.755.723-5.038,1.657-1.6,3.786-3.13,4.281c-1.473.478-3.418-1.625-5.05-1.625s-3.577,2.1-5.05,1.625c-1.526-.5-1.86-3.357-3.13-4.281S4.554,27,3.62,25.718s.474-3.776-.022-5.3c-.478-1.473-3.1-2.67-3.1-4.3s2.62-2.83,3.1-4.3c.5-1.526-.9-4.032.022-5.3s3.755-.723,5.038-1.657,1.6-3.786,3.13-4.281C13.261.093,15.206,2.2,16.838,2.2s3.577-2.1,5.05-1.625c1.526.5,1.86,3.357,3.13,4.281s4.1.374,5.038,1.657-.474,3.776.022,5.3C30.557,13.284,33.177,14.481,33.177,16.113Z" transform="translate(-0.382 -0.383)" fill="none" stroke="#beaf87" stroke-miterlimit="10" stroke-width="1"/>
+      <circle id="Ellipse_20" data-name="Ellipse 20" cx="12.171" cy="12.171" r="12.171" transform="translate(4.339 3.484)" fill="none" stroke="#687280" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Path_1538" data-name="Path 1538" d="M22.856,116.638l-4.871,14a.53.53,0,0,1-.977.059l-2.517-5.165-5.237,2.508a.53.53,0,0,1-.73-.651l4.714-13.726" transform="translate(-6.497 -86.942)" fill="none" stroke="#161615" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Path_1539" data-name="Path 1539" d="M69.942,116.473,74.8,130.53a.53.53,0,0,0,.977.059l2.517-5.165,5.237,2.508a.53.53,0,0,0,.73-.651l-4.654-13.761" transform="translate(-53.497 -86.829)" fill="none" stroke="#161615" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Path_1540" data-name="Path 1540" d="M43.792,33.719l2.643,4.9,5.481,1-3.848,4.03.744,5.521-5.021-2.414-5.021,2.414.744-5.521-3.848-4.03,5.481-1Z" transform="translate(-27.281 -25.791)" fill="none" stroke="#f47d15" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

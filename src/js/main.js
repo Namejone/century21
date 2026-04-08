@@ -1,7 +1,11 @@
-import "../css/style.css";
 import Alpine from "alpinejs";
+// Alpine Intersect plugin for CounterUp
+import intersect from "@alpinejs/intersect";
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
+// Custom Swiper Slider Pagination Image
+import "../css/style.css";
+import sliderPagiIcon from "../imgs/icons/slider-pagi-active-icon.svg";
 
 // currentOpportunities Slider Activation
 const swiper = new Swiper(".currentOpportunities", {
@@ -60,6 +64,12 @@ const testimonialSwiper = new Swiper(".testimonial-swiper", {
   pagination: {
     el: ".testimonial-swiper-pagination",
     clickable: true,
+    renderBullet: function (index, className) {
+      return `<span class="${className}">
+                <span class="bullet-dot"></span>
+                <img class="bullet-img" src="${sliderPagiIcon}" alt="active" />
+            </span>`;
+    },
   },
   navigation: {
     nextEl: ".testimonial-next-btn",
@@ -76,9 +86,40 @@ const testimonialSwiper = new Swiper(".testimonial-swiper", {
 });
 
 window.Alpine = Alpine;
+// AlpineJS Plugin
+Alpine.plugin(intersect);
 
-// Optional: Add Alpine plugins here if needed
-// import collapse from '@alpinejs/collapse'
-// Alpine.plugin(collapse)
+// CounterUp Alpine
+window.counterUp = function (target, duration = 2000) {
+  return {
+    current: 0,
+    started: false,
+
+    startCount() {
+      if (this.started) return;
+      this.started = true;
+
+      const startTime = performance.now();
+      const self = this;
+
+      function animate(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        const eased = 1 - Math.pow(1 - progress, 3);
+
+        self.current = Math.round(eased * target);
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          self.current = target;
+        }
+      }
+
+      requestAnimationFrame(animate);
+    },
+  };
+};
 
 Alpine.start();
