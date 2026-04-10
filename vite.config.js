@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: "index.html",
         aVendre: "a-vendre.html",
+        estimation: "estimation.html",
         agency: "agency.html",
         contact: "contact.html",
       },
