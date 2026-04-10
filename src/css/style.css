@@ -1,190 +1,114 @@
-@import "tailwindcss";
-@import "swiper/css";
-@import "swiper/css/navigation";
-@import "swiper/css/pagination";
+@import 'tailwindcss';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
 
 /* You can define theme overrides here using CSS variables */
 @theme {
-  --font-main: "Poppins", ui-sans-serif, system-ui;
-  --color-primary: #beaf87;
-  --color-secondary: #ff5733;
-  --color-dark: #000000;
-  --color-orange: #f47d15;
-  --color-light: #f3f4f6;
+    --font-main: 'Poppins', ui-sans-serif, system-ui;
+    --color-primary: #beaf87;
+    --color-secondary: #ff5733;
+    --color-dark: #000000;
+    --color-orange: #f47d15;
+    --color-light: #f3f4f6;
 
-  /* Container Width */
-  --content-width: 1170px;
+    /* Container Width */
+    --content-width: 1170px;
 
-  --text-xs: 0.75rem;
-  --text-base: 1rem;
-  --text-md: 1.125rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 1.75rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2rem;
-  --text-5xl: 2.25rem;
-  --text-6xl: 2.5rem;
-  --text-7xl: 2.875rem;
-  --text-8xl: 3.125rem;
-  --text-9xl: 3.5rem;
+    --text-xs: 0.75rem;
+    --text-base: 1rem;
+    --text-md: 1.125rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 1.75rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2rem;
+    --text-5xl: 2.25rem;
+    --text-6xl: 2.5rem;
+    --text-7xl: 2.875rem;
+    --text-8xl: 3.125rem;
+    --text-9xl: 3.5rem;
 
-  --breakpoint-sm: 40rem; /* 640px */
-  --breakpoint-md: 48rem; /* 768px */
-  --breakpoint-lg: 64rem; /* 1024px */
-  --breakpoint-xl: 80rem; /* 1280px */
-  --breakpoint-2xl: 90rem; /* 1440px */
+    --breakpoint-sm: 40rem; /* 640px */
+    --breakpoint-md: 48rem; /* 768px */
+    --breakpoint-lg: 64rem; /* 1024px */
+    --breakpoint-xl: 80rem; /* 1280px */
+    --breakpoint-2xl: 90rem; /* 1440px */
 }
 @layer base {
-  html {
-    font-size: var(--text-base);
-    font-family: var(--font-main);
-    line-height: 1.6;
-    color: var(--color-brand-dark);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 600;
-  }
-  body {
-    background-color: #ffffff;
-    margin: 0;
-  }
+    html {
+        font-size: var(--text-base);
+        font-family: var(--font-main);
+        line-height: 1.6;
+        color: var(--color-brand-dark);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 600;
+    }
+    body {
+        background-color: #ffffff;
+        margin: 0;
+    }
 }
 
 @utility container {
-  margin-inline: auto;
-  padding-inline: 1rem;
-  width: 100%;
-  max-width: var(--content-width);
-  @media (min-width: 640px) {
-    max-width: 640px;
-  }
-  @media (min-width: 768px) {
-    max-width: 768px;
-  }
-  @media (min-width: 1024px) {
-    max-width: 1024px;
-  }
-  @media (min-width: 1280px) {
+    margin-inline: auto;
+    padding-inline: 1rem;
+    width: 100%;
     max-width: var(--content-width);
-  }
+    @media (min-width: 640px) {
+        max-width: 640px;
+    }
+    @media (min-width: 768px) {
+        max-width: 768px;
+    }
+    @media (min-width: 1024px) {
+        max-width: 1024px;
+    }
+    @media (min-width: 1280px) {
+        max-width: var(--content-width);
+    }
 }
 @utility btn {
-  @apply inline-flex items-center justify-center px-5 py-2 font-normal rounded-full transition-all duration-200 cursor-pointer border border-transparent;
+    @apply inline-flex items-center justify-center px-5 py-2 font-normal rounded-full transition-all duration-200 cursor-pointer border border-transparent;
 
-  &.btn-primary {
-    @apply bg-primary text-white hover:bg-dark;
-  }
+    &.btn-primary {
+        @apply bg-primary text-white hover:bg-dark;
+    }
 
-  &.btn-dark {
-    @apply bg-dark text-white hover:bg-primary;
-  }
+    &.btn-dark {
+        @apply bg-dark text-white hover:bg-primary;
+    }
 
-  &.btn-orange {
-    @apply bg-orange text-white hover:bg-secondary;
-  }
+    &.btn-orange {
+        @apply bg-orange text-white hover:bg-secondary;
+    }
 
-  &.btn-outline {
-    @apply bg-transparent border-primary text-primary hover:bg-primary hover:text-white;
-  }
+    &.btn-outline {
+        @apply bg-transparent border-primary text-primary hover:bg-primary hover:text-white;
+    }
 
-  &.btn-outline-dark {
-    @apply bg-transparent border-dark text-dark hover:bg-dark hover:text-white;
-  }
+    &.btn-outline-dark {
+        @apply bg-transparent border-dark text-dark hover:bg-dark hover:text-white;
+    }
 
-  &.btn-outline-primary {
-    @apply bg-transparent border-primary text-primary hover:bg-primary hover:text-white;
-  }
+    &.btn-outline-primary {
+        @apply bg-transparent border-primary text-primary hover:bg-primary hover:text-white;
+    }
 }
 .aspect-card {
-  aspect-ratio: 4 / 6;
-}
-
-/* swiper js css */
-.swiper-pagination-bullet {
-  background: var(--color-primary) !important;
-  opacity: 0.5 !important;
-  width: 8px !important;
-  height: 8px !important;
-}
-.swiper-pagination-bullet-active {
-  background: var(--color-primary) !important;
-  width: 8px !important;
-  height: 8px !important;
-  position: relative;
-  opacity: 1 !important;
-}
-
-/* Filter Page options */
-.sel-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-.sel-wrap select {
-  -webkit-appearance: none;
-  appearance: none;
-  border: 1px solid #c8c4b0;
-  border-radius: 9999px;
-  padding: 9px 48px 9px 16px;
-  font-size: 14px;
-  color: inherit;
-  background: white;
-  cursor: pointer;
-  outline: none;
-  min-width: 140px;
-  width: 100%;
-}
-.sel-wrap select:focus {
-  border-color: #888;
-}
-.sel-arrow {
-  pointer-events: none;
-  position: absolute;
-  right: 8px;
-  width: 26px;
-  height: 26px;
-  background: #111;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  line-height: 1;
-}
-input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  background: transparent;
-  cursor: pointer;
-}
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #111;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 1.5px #111;
-}
-input[type="range"]::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #111;
-  box-shadow: 0 0 0 1.5px #111;
-  border: none;
+    aspect-ratio: 4 / 6;
 }
 
 /* Custom Pagination Bullet */
-/* .swiper-pagination-bullet {
+.swiper-pagination-bullet {
     position: relative;
     background-color: transparent;
     opacity: 1;
@@ -217,4 +141,65 @@ input[type="range"]::-moz-range-thumb {
 }
 .swiper-pagination-bullet-active .bullet-img {
     opacity: 1;
-} */
+}
+
+/* Filter Page options */
+.sel-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.sel-wrap select {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #c8c4b0;
+    border-radius: 9999px;
+    padding: 9px 48px 9px 16px;
+    font-size: 14px;
+    color: inherit;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    min-width: 140px;
+    width: 100%;
+}
+.sel-wrap select:focus {
+    border-color: #888;
+}
+.sel-arrow {
+    pointer-events: none;
+    position: absolute;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    line-height: 1;
+}
+input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #111;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 1.5px #111;
+}
+input[type='range']::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #111;
+    box-shadow: 0 0 0 1.5px #111;
+    border: none;
+}

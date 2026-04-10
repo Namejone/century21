@@ -200,91 +200,45 @@
 
         <!-- main -->
         <main>
-            <!-- Hero-section--start -->
-            <section class="pb-20 pt-24 lg:pt-36 lg:pb-24">
+            <!-- PageTop-section--start -->
+            <section class="pt-25 md:pt-30 pb-8">
                 <div class="container">
-                    <div
-                        class="flex flex-col lg:flex-row items-center gap-6 lg:gap-12"
+                    <!-- Breadcrumb -->
+                    <nav
+                        class="flex items-center gap-2 mb-8 md:mb-12"
+                        aria-label="Breadcrumb"
                     >
-                        <div class="w-full lg:w-1/2 space-y-6">
-                            <div class="mb-3 lg:mb-4">
-                                <img
-                                    src="./src/imgs/logos/logo.png"
-                                    alt="Century 21"
-                                    class="h-12 lg:h-24 mb-4 md:mb-6 lg:mb-10"
-                                />
-                                <h1 class="text-5xl lg:text-9xl leading-tight">
-                                    Derrière
-                                    <br />l’agence, une <br />équipe à votre
-                                    <br />écoute
-                                </h1>
-                            </div>
+                        <a href="/" class="flex items-center">
+                            <img
+                                src="./src/imgs/icons/home.svg"
+                                alt="Home"
+                                class="object-contain"
+                            />
+                        </a>
 
-                            <p
-                                class="text-sm md:text-base leading-relaxed max-w-md mb-0"
-                            >
-                                Lorem ipsum dolor sit amet, consetetur
-                                sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam
-                                erat, sed diam voluptua. At vero eos et accusam
-                                et justo duo dolores et ea rebum.
-                            </p>
+                        <span
+                            class="text-[12px] font-normal text-black flex items-center before:content-['\ea6e'] before:font-['remixicon'] before:mr-2 before:mt-0.5 before:text-gray-400"
+                        >
+                            Contact
+                        </span>
+                    </nav>
 
-                            <div
-                                class="flex flex-col items-start gap-4 pt-3 lg:pt-4"
-                            >
-                                <a href="#" class="text-sm underline"
-                                    >Lire plus</a
-                                >
-                            </div>
-                        </div>
-
-                        <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
-                            <div class="flex flex-col gap-4 pt-10 md:pt-18">
-                                <div
-                                    class="rounded-2xl overflow-hidden shadow-sm"
-                                >
-                                    <img
-                                        src="./src/imgs/thumbs/hero-agency-img-1.png"
-                                        alt="City View"
-                                        class="w-full h-[104px] md:h-[185px] object-cover"
-                                    />
-                                </div>
-                                <div
-                                    class="rounded-2xl overflow-hidden shadow-sm"
-                                >
-                                    <img
-                                        src="./src/imgs/thumbs/hero-agency-img-2.png"
-                                        alt="Historic Building"
-                                        class="w-full h-full object-cover"
-                                    />
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-4">
-                                <div
-                                    class="rounded-2xl overflow-hidden shadow-sm"
-                                >
-                                    <img
-                                        src="./src/imgs/thumbs/hero-agency-img-3.png"
-                                        alt="Blue Lake"
-                                        class="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div
-                                    class="rounded-2xl overflow-hidden shadow-sm"
-                                >
-                                    <img
-                                        src="./src/imgs/thumbs/hero-agency-img-4.png"
-                                        alt="Church Interior"
-                                        class="w-full h-[104px] md:h-[185px] object-cover"
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                    <!-- title-and-description -->
+                    <div class="block mb-4 md:6 md:max-w-[472px]">
+                        <h1 class="text-5xl lg:text-9xl font-semibold mb-3">
+                            Restons en
+                            <br />contact !
+                        </h1>
+                        <p>
+                            Une question, une idée ou l’envie de concrétiser
+                            votre projet immobilier ? Notre équipe est à votre
+                            écoute et vous répond avec réactivité et
+                            bienveillance.
+                        </p>
                     </div>
                 </div>
             </section>
-            <!-- Hero-section--end -->
+            <!-- PageTop-section--end -->
 
             <!-- Contact-section--start -->
             <section class="pb-20 md:pb-30 xl:pb-40">
@@ -451,7 +405,7 @@
                                         <textarea
                                             id="message"
                                             placeholder="Description"
-                                            class="w-full h-38 py-2 px-6 rounded-[10px] text-base text-black border border-primary bg-white resize-none transition-all duration-300 ease-in-out placeholder:text-black placeholder:opacity-50 focus:outline-none focus:border-secondary"
+                                            class="w-full h-38 md:h-25 py-2 px-6 rounded-[10px] text-base text-black border border-primary bg-white resize-none transition-all duration-300 ease-in-out placeholder:text-black placeholder:opacity-50 focus:outline-none focus:border-secondary"
                                         ></textarea>
                                     </div>
 
@@ -508,7 +462,7 @@
                                                 class="w-15 h-15 rounded-full overflow-hidden"
                                             >
                                                 <img
-                                                    src="src/imgs/thumbs/team-member-03.png"
+                                                    src="src/imgs/thumbs/team-member-03.webp"
                                                     alt="Alexiane Jourquin"
                                                     class="w-full h-full object-cover"
                                                 />
@@ -2303,8 +2257,8 @@
                                     >
                                 </p>
                                 <p>
-                                    <a 
-                                        href="tel:+987654321" 
+                                    <a
+                                        href="tel:+987654321"
                                         class="underline underline-offset-[5px] transition-all duration-300 ease-in-out hover:text-primary"
                                         >Contacter par téléphone</a
                                     >
