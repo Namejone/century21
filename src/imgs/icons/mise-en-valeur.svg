@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="47.386" height="47.386" viewBox="0 0 47.386 47.386">
+  <g id="Orion_images" transform="translate(0.5 0.5)">
+    <path id="layer1" d="M24,46.554c0-2.165.464-10.823,5.644-10.823s3.17,4.639,5.18,4.639S35.287,28,41.008,28s7.731,16.853,7.731,18.554" transform="translate(-6.991 -7.899)" fill="none" stroke="#beaf87" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="layer2" d="M8.185,36.016H2V2H36.016V8.185" transform="translate(-1.999 -2)" fill="none" stroke="#202020" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="layer2-2" data-name="layer2" d="M16.185,44.016H10V10H44.016v6.185" transform="translate(-3.815 -3.815)" fill="none" stroke="#687280" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="layer1-2" data-name="layer1" d="M18,18H52.016V52.016H18Zm0,26.285H52.016" transform="translate(-5.63 -5.63)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <ellipse id="layer1-3" data-name="layer1" cx="3.232" cy="3.232" rx="3.232" ry="3.232" transform="translate(16.652 16.651)" fill="none" stroke="#f47d15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>
