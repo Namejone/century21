@@ -154,44 +154,71 @@
                 <div class="flex flex-wrap items-start w-full justify-between gap-3">
                     <div class="w-full lg:w-[670px]">
                         <!-- form-wrapper -->
-                        <div x-data="{ 
-            step: 1, 
-            address: '', 
-            propertyType: null,
-            showMap: false 
-        }" class="w-full max-w-[670px] bg-light rounded-[10px] p-8 md:p-12  ">
+                        <div x-data="{ step: 1, subStep: 1, address: '', propertyType: null,propertyStatus: null,objective: null,delay: null, showMap: false }"
+                            class="w-full   max-w-[670px] bg-light rounded-[10px] p-8 md:p-12">
 
+                            <!-- Steps-progressbar -->
                             <div
                                 class="flex items-center justify-between mb-8 lg:mb-11 text-sm font-medium text-gray-400">
-                                <div class="flex items-center gap-2 text-xs" :class="step >= 1 ? 'text-black' : ''">
+
+                                <div class="flex flex-col lg:flex-row items-center gap-1 lg:gap-2 text-[10px] lg:text-xs"
+                                    :class="step >= 1 ? 'text-black' : ''">
                                     <template x-if="step > 1">
                                         <span
-                                            class="bg-[#F47D15] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">✓</span>
+                                            class="bg-[#F47D15] text-white rounded-full w-5 h-5 lg:w-5 lg:h-5 flex items-center justify-center text-[10px] lg:text-xs">✓</span>
                                     </template>
                                     <template x-if="step === 1">
                                         <span
-                                            class="bg-black text-white rounded-full w-5 h-5 flex items-center justify-center">1</span>
+                                            class="bg-black text-white rounded-full w-5 h-5 lg:w-5 lg:h-5 flex items-center justify-center">1</span>
                                     </template>
-                                    <span>Adresse</span>
+                                    <span class="text-center lg:text-left">Adresse</span>
                                 </div>
-                                <div class="flex-1 h-[1px] bg-gray-300 mx-4"></div>
-                                <div class="flex items-center text-xs font-normal gap-2"
+
+                                <div class="flex-1 h-[1px] bg-gray-300 mx-2 lg:mx-4 mt-[-15px] lg:mt-0"></div>
+
+                                <div class="flex flex-col lg:flex-row items-center gap-1 lg:gap-2 text-[10px] lg:text-xs"
                                     :class="step >= 2 ? 'text-black' : ''">
-                                    <span :class="step === 2 ? 'bg-black text-white' : 'bg-gray-400 text-white'"
-                                        class="rounded-full w-6 h-6 flex items-center justify-center">2</span>
-                                    <span>Propriété</span>
+                                    <template x-if="step > 2">
+                                        <span
+                                            class="bg-[#F47D15] text-white rounded-full w-5 h-5 lg:w-5 lg:h-5 flex items-center justify-center text-[10px] lg:text-xs">✓</span>
+                                    </template>
+                                    <template x-if="step === 2">
+                                        <span
+                                            class="bg-black text-white rounded-full w-5 h-5 lg:w-5 lg:h-5 flex items-center justify-center">2</span>
+                                    </template>
+                                    <template x-if="step < 2">
+                                        <span
+                                            class="bg-gray-400 text-white rounded-full w-5 h-5 lg:w-5 lg:h-5 flex items-center justify-center">2</span>
+                                    </template>
+                                    <span class="text-center lg:text-left">Propriété</span>
                                 </div>
-                                <div class="flex-1 h-[1px] bg-gray-300 mx-4"></div>
-                                <div class="flex items-center text-xs font-normal gap-2">
-                                    <span
-                                        class="bg-gray-400 text-white rounded-full w-6 h-6 flex items-center justify-center">3</span>
-                                    <span>Objectif</span>
+
+                                <div class="flex-1 h-[1px] bg-gray-300 mx-2 lg:mx-4 mt-[-15px] lg:mt-0"></div>
+
+                                <div class="flex flex-col lg:flex-row items-center gap-1 lg:gap-2 text-[10px] lg:text-xs"
+                                    :class="step >= 3 ? 'text-black' : ''">
+                                    <template x-if="step > 3">
+                                        <span
+                                            class="bg-[#F47D15] text-white rounded-full w-5 h-5 lg:w-5 lg:h-5 flex items-center justify-center text-[10px] lg:text-xs">✓</span>
+                                    </template>
+                                    <template x-if="step === 3">
+                                        <span
+                                            class="bg-black text-white rounded-full w-5 h-5 lg:w-5 lg:h-5 flex items-center justify-center">3</span>
+                                    </template>
+                                    <template x-if="step < 3">
+                                        <span
+                                            class="bg-gray-400 text-white rounded-full w-5 h-5 lg:w-5 lg:h-5 flex items-center justify-center">3</span>
+                                    </template>
+                                    <span class="text-center lg:text-left">Objectif</span>
                                 </div>
-                                <div class="flex-1 h-[1px] bg-gray-300 mx-4"></div>
-                                <div class="flex items-center text-xs font-normal gap-2">
-                                    <span
-                                        class="bg-gray-400 text-white rounded-full w-6 h-6 flex items-center justify-center">4</span>
-                                    <span>Estimation</span>
+
+                                <div class="flex-1 h-[1px] bg-gray-300 mx-2 lg:mx-4 mt-[-15px] lg:mt-0"></div>
+
+                                <div class="flex flex-col lg:flex-row items-center gap-1 lg:gap-2 text-[10px] lg:text-xs"
+                                    :class="step >= 4 ? 'text-black' : ''">
+                                    <span :class="step === 4 ? 'bg-black text-white' : 'bg-gray-400 text-white'"
+                                        class="rounded-full w-5 h-5 lg:w-5 lg:h-5 flex items-center justify-center">4</span>
+                                    <span class="text-center lg:text-left">Estimation</span>
                                 </div>
                             </div>
 
@@ -209,13 +236,13 @@
                                     </span>
                                     <input type="text" placeholder="Entrer votre adresse" x-model="address"
                                         @input="showMap = address.length > 5"
-                                        class="w-full pl-12 pr-4 py-2 text-base rounded-full border border-[#d1c1a5] focus:outline-none focus:ring-2 focus:ring-[#d1c1a5] bg-white">
+                                        class="w-full pl-12 pr-4 py-2 text-base rounded-full border border-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white">
                                 </div>
 
                                 <div x-show="showMap" x-transition class="mb-6">
                                     <p class="text-base font-normal mb-4">Trouvé ! </p>
                                     <div
-                                        class="w-full h-48 rounded-2xl border border-[#d1c1a5] bg-white overflow-hidden relative">
+                                        class="w-full h-48 rounded-2xl border border-primary bg-white overflow-hidden relative">
                                         <img src="./src/imgs/thumbs/map-mini.webp" alt="Map View"
                                             class="w-full h-full object-cover">
 
@@ -236,60 +263,352 @@
 
                             <!-- Step-2 -->
                             <div x-show="step === 2" x-cloak x-transition>
-                                <h2 class="text-base font-semibold mb-4 text-black">De quel type de
-                                    propriété s'agit-il ?</h2>
 
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 max-w-5/6 mx-auto">
-                                    <div @click="propertyType = 'appartement'"
-                                        :class="propertyType === 'appartement' ? 'border-[#d1c1a5] ring-1 ring-[#d1c1a5]' : 'border-transparent'"
-                                        class="bg-white p-8 rounded-2xl border-2 cursor-pointer transition-all hover:shadow-md flex flex-col items-center justify-center relative h-42">
-                                        <div class="absolute top-4 flex justify-center w-full">
-                                            <div :class="propertyType === 'appartement' ? 'bg-[#c5b394]' : 'bg-gray-100'"
-                                                class="w-6 h-6 rounded-full flex items-center justify-center transition-colors">
-                                                <template x-if="propertyType === 'appartement'"><span
-                                                        class="text-white text-xs">✓</span></template>
+                                <div x-show="subStep === 1">
+                                    <h2 class="text-base font-semibold mb-4 text-black">De quel type de propriété
+                                        s'agit-il ?</h2>
+
+
+                                    <div class="grid grid-cols-2 gap-3 md:gap-6 mb-10 lg:max-w-5/6 mx-auto">
+                                        <div @click="propertyType = 'appartement'"
+                                            :class="propertyType === 'appartement' ? 'border-primary ring-1 ring-primary bg-[#FAF9F6]' : 'border-transparent bg-white'"
+                                            class="p-8 rounded-2xl border-2 cursor-pointer transition-all hover:shadow-md flex flex-col items-center justify-center relative h-42">
+
+                                            <div class="absolute top-4 flex justify-center w-full">
+                                                <div :class="propertyType === 'appartement' ? 'bg-[#c5b394]' : 'bg-gray-100'"
+                                                    class="w-6 h-6 rounded-full flex items-center justify-center transition-colors">
+                                                    <template x-if="propertyType === 'appartement'">
+                                                        <span class="text-white text-xs">✓</span>
+                                                    </template>
+                                                </div>
                                             </div>
+
+                                            <span class="text-sm font-normal mb-2.5 mt-5">Appartement</span>
+                                            <img src="./src/imgs/icons/Appartement.svg" alt="Appartement"
+                                                class="h-14 w-auto">
                                         </div>
-                                        <span class="text-sm font-normal mb-2.5 mt-5">Appartement</span>
-                                        <img src="./src/imgs/icons/Appartement.svg" alt="Appartement"
-                                            class="h-14 w-auto">
+
+                                        <div @click="propertyType = 'maison'"
+                                            :class="propertyType === 'maison' ? 'border-[#c5b394] ring-1 ring-[#c5b394] bg-[#FAF9F6]' : 'border-transparent bg-white'"
+                                            class="p-8 rounded-2xl border-2 cursor-pointer transition-all hover:shadow-md flex flex-col items-center justify-center relative h-42">
+
+                                            <div class="absolute top-4 flex justify-center w-full">
+                                                <div :class="propertyType === 'maison' ? 'bg-[#c5b394]' : 'bg-gray-100'"
+                                                    class="w-6 h-6 rounded-full flex items-center justify-center transition-colors">
+                                                    <template x-if="propertyType === 'maison'">
+                                                        <span class="text-white text-xs">✓</span>
+                                                    </template>
+                                                </div>
+                                            </div>
+
+                                            <span class="text-sm font-normal mb-2.5 mt-5">Maison</span>
+                                            <img src="./src/imgs/icons/Maison.svg" alt="Maison" class="h-14 w-auto">
+                                        </div>
                                     </div>
 
-                                    <div @click="propertyType = 'maison'"
-                                        :class="propertyType === 'maison' ? 'border-[#d1c1a5] ring-1 ring-[#d1c1a5]' : 'border-transparent'"
-                                        class="bg-white p-8 rounded-2xl border-2 cursor-pointer transition-all hover:shadow-md flex flex-col items-center justify-center relative h-42">
-                                        <div class="absolute top-4 flex justify-center w-full">
-                                            <div :class="propertyType === 'maison' ? 'bg-[#c5b394]' : 'bg-gray-100'"
-                                                class="w-6 h-6 rounded-full flex items-center justify-center transition-colors">
-                                                <template x-if="propertyType === 'maison'"><span
-                                                        class="text-white text-xs">✓</span></template>
-                                            </div>
-                                        </div>
-                                        <span class="text-sm font-normal mb-2.5 mt-5">Maison</span>
-                                        <img src="./src/imgs/icons/Maison.svg" alt="Maison" class="h-14 w-auto">
+                                    <div class="flex flex-col items-center gap-4">
+                                        <button @click="subStep = 2" :disabled="!propertyType"
+                                            :class="propertyType ? 'bg-black text-white' : 'bg-gray-400 text-white cursor-not-allowed'"
+                                            class="w-full lg:w-[275px] py-2 rounded-full text-base font-normal cursor-pointer">Suivant</button>
+                                        <button @click="step = 1"
+                                            class="text-dark underline text-sm font-normal">Revenir à l'étape
+                                            précédente</button>
                                     </div>
                                 </div>
 
+                                <div x-show="subStep === 2">
+                                    <h2 class="text-base font-semibold mb-6 text-black">Détails de votre propriété</h2>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
+                                        <!-- Single-form-input -->
+                                        <div>
+                                            <label class="block text-base mb-1">Année de construction</label>
+                                            <input type="text" placeholder="Année de construction"
+                                                class="w-full px-4 py-2 rounded-full border border-primary bg-white">
+                                        </div>
+                                        <!-- Single-form-input -->
+                                        <div>
+                                            <label class="block text-base mb-1">Nombre de salle(s) de bain</label>
+                                            <input type="text" placeholder="Année de construction"
+                                                class="w-full px-4 py-2 rounded-full border border-primary bg-white">
+                                        </div>
+                                        <!-- Single-form-input -->
+                                        <div>
+                                            <label class="block text-base mb-1">Surface habitable</label>
+                                            <input type="text" placeholder="Année de construction"
+                                                class="w-full px-4 py-2 rounded-full border border-primary bg-white">
+                                        </div>
+                                        <!-- Single-form-input -->
+                                        <div>
+                                            <label class="block text-base mb-1">Nombre de place(s) de parking</label>
+                                            <input type="text" placeholder="Année de construction"
+                                                class="w-full px-4 py-2 rounded-full border border-primary bg-white">
+                                        </div>
+                                        <!-- Single-form-input -->
+                                        <div>
+                                            <label class="block text-base mb-1">Surface du terrain</label>
+                                            <input type="text" placeholder="Année de construction"
+                                                class="w-full px-4 py-2 rounded-full border border-primary bg-white">
+                                        </div>
+                                        <!-- Single-form-input -->
+                                        <div>
+                                            <label class="block text-base mb-1">Nombre de place(s) de garage</label>
+                                            <input type="text" placeholder="Année de construction"
+                                                class="w-full px-4 py-2 rounded-full border border-primary bg-white">
+                                        </div>
+                                        <!-- Single-form-input -->
+                                        <div>
+                                            <label class="block text-base mb-1">Nombre de chambre(s)</label>
+                                            <input type="text" placeholder="Année de construction"
+                                                class="w-full px-4 py-2 rounded-full border border-primary bg-white">
+                                        </div>
+
+
+                                        <div>
+                                            <label class="block text-base mb-1">Extérieur</label>
+                                            <div class="relative">
+                                                <select
+                                                    class="w-full px-4 py-2 rounded-full border border-primary bg-white appearance-none">
+                                                    <option>Sélectionner</option>
+                                                    <option>Sélectionner</option>
+                                                    <option>Sélectionner</option>
+                                                    <option>Sélectionner</option>
+                                                </select>
+                                                <div
+                                                    class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                                    <div
+                                                        class="bg-black text-white w-7 h-7 rounded-full flex items-center justify-center">
+                                                        <i class="ri-arrow-down-long-line"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-4">
+                                        <button @click="subStep = 3"
+                                            class="w-full lg:w-[275px] py-2 bg-black text-white rounded-full">Suivant</button>
+                                        <button @click="subStep = 1"
+                                            class="text-dark underline text-sm font-normal">Revenir à l'étape
+                                            précédente</button>
+                                    </div>
+                                </div>
+
+                                <div x-show="subStep === 3">
+                                    <h2 class="text-base font-semibold mb-8 text-black">Quel est l'état de votre
+                                        propriété ?</h2>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-[30px] gap-y-[8px] mb-10">
+                                        <!-- Single-Chekbox -->
+                                        <div @click="propertyStatus = 'renovation'"
+                                            class=" p-4 rounded-[10px] cursor-pointer flex items-center gap-[10px] border"
+                                            :class="propertyStatus === 'renovation' ? 'border-primary ring-1 ring-primary bg-[#FAF9F6]' : 'border-transparent bg-white'">
+                                            <div class="w-[20px] h-[20px] rounded-full border border-transparent flex-shrink-0 flex items-center justify-center"
+                                                :class="propertyStatus === 'renovation' ? 'bg-primary' : 'bg-light'">
+                                                <template x-if="propertyStatus === 'renovation'">
+                                                    <span class="text-white text-[10px]">✓</span></template>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <span class="text-sm mb-1"
+                                                    :class="propertyStatus === 'renovation' ? 'font-semibold' : 'font-normal'">A
+                                                    besoin de rénovations</span>
+                                                <span class="text-xs text-dark/75">Nécessite un entretien
+                                                    important</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Single-Chekbox -->
+                                        <div @click="propertyStatus = 'nouvelle'"
+                                            class=" p-4 rounded-[10px] cursor-pointer flex items-center gap-[10px] border"
+                                            :class="propertyStatus === 'nouvelle' ? 'border-primary ring-1 ring-primary bg-[#FAF9F6]' : 'border-transparent bg-white'">
+                                            <div class="w-[20px] h-[20px] rounded-full border border-transparent flex-shrink-0 flex items-center justify-center"
+                                                :class="propertyStatus === 'nouvelle' ? 'bg-primary' : 'bg-light'">
+                                                <template x-if="propertyStatus === 'nouvelle'">
+                                                    <span class="text-white text-[10px]">✓</span></template>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <span class="text-sm mb-1"
+                                                    :class="propertyStatus === 'nouvelle' ? 'font-semibold' : 'font-normal'">Nouvelle
+                                                    construction</span>
+                                                <span class="text-xs text-dark/75">Nécessite un entretien
+                                                    important</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Single-Chekbox -->
+                                        <div @click="propertyStatus = 'entretenu'"
+                                            class=" p-4 rounded-[10px] cursor-pointer flex items-center gap-[10px] border"
+                                            :class="propertyStatus === 'entretenu' ? 'border-primary ring-1 ring-primary bg-[#FAF9F6]' : 'border-transparent bg-white'">
+                                            <div class="w-[20px] h-[20px] rounded-full border border-transparent flex-shrink-0 flex items-center justify-center"
+                                                :class="propertyStatus === 'entretenu' ? 'bg-primary' : 'bg-light'">
+                                                <template x-if="propertyStatus === 'entretenu'">
+                                                    <span class="text-white text-[10px]">✓</span></template>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <span class="text-sm mb-1"
+                                                    :class="propertyStatus === 'entretenu' ? 'font-semibold' : 'font-normal'">Bien
+                                                    entretenu</span>
+                                                <span class="text-xs text-dark/75">En bon état général, dernières
+                                                    rénovations à + de 3 ans</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Single-Chekbox -->
+                                        <div @click="propertyStatus = 'rénové'"
+                                            class=" p-4 rounded-[10px] cursor-pointer flex items-center gap-[10px] border"
+                                            :class="propertyStatus === 'rénové' ? 'border-primary ring-1 ring-primary bg-[#FAF9F6]' : 'border-transparent bg-white'">
+                                            <div class="w-[20px] h-[20px] rounded-full border border-transparent flex-shrink-0 flex items-center justify-center"
+                                                :class="propertyStatus === 'rénové' ? 'bg-primary' : 'bg-light'">
+                                                <template x-if="propertyStatus === 'rénové'">
+                                                    <span class="text-white text-[10px]">✓</span></template>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <span class="text-sm mb-1"
+                                                    :class="propertyStatus === 'rénové' ? 'font-semibold' : 'font-normal'">Récemment
+                                                    rénové</span>
+                                                <span class="text-xs text-dark/75">En excellent état ou rénové il y a
+                                                    - de 3 ans</span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="flex flex-col items-center gap-4">
+                                        <button @click="step = 3" :disabled="!propertyStatus"
+                                            :class="propertyStatus ? 'bg-black text-white' : 'bg-dark/30 text-white'"
+                                            class="w-full lg:w-[275px] py-2 rounded-full">Suivant</button>
+                                        <button @click="subStep = 2"
+                                            class="text-dark underline text-sm font-normal">Revenir à l'étape
+                                            précédente</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!-- Step-3 -->
+                            <div x-show="step === 3" x-cloak x-transition>
+                                <h2 class="text-base font-semibold mb-8 text-black">Quel est votre objectif immobilier
+                                    actuellement ?</h2>
+
+                                <div class="flex flex-col sm:flex-row gap-3 md:gap-6 mb-10">
+
+                                    <div @click="objective = 'vendre'"
+                                        class="flex-1  p-4 rounded-full cursor-pointer flex items-center gap-4 border transition-all border-transparent"
+                                        :class="objective === 'vendre' ? 'border-primary ring-1 ring-primary bg-[#FAF9F6]' : 'border-transparent bg-white'">
+                                        <div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center bg-[#F3F4F6]"
+                                            :class="objective === 'vendre' ? 'bg-primary border-primary' : ''">
+                                            <template x-if="objective === 'vendre'">
+                                                <span class="text-white text-[10px]">✓</span>
+                                            </template>
+                                        </div>
+                                        <span class="text-[14px] text-black"
+                                            :class="objective === 'vendre' ? 'font-semibold' : 'font-normal'">Vendre mon
+                                            bien</span>
+                                    </div>
+
+                                    <div @click="objective = 'connaître'"
+                                        class="flex-1  p-4 rounded-full cursor-pointer flex items-center gap-4 border transition-all border-transparent"
+                                        :class="objective === 'connaître' ? 'border-primary ring-1 ring-primary bg-[#FAF9F6]' : 'border-transparent bg-white'">
+                                        <div class="w-5 h-5 rounded-full  flex-shrink-0 flex items-center justify-center bg-[#F3F4F6]"
+                                            :class="objective === 'connaître' ? 'bg-primary border-primary' : ''">
+                                            <template x-if="objective === 'connaître'">
+                                                <span class="text-white text-[10px]">✓</span>
+                                            </template>
+                                        </div>
+                                        <span class="text-[14px] text-black"
+                                            :class="objective === 'connaître' ? 'font-semibold' : 'font-normal'">Connaitre
+                                            sa valeur actuelle</span>
+                                    </div>
+
+                                </div>
+
                                 <div class="flex flex-col items-center gap-4">
-                                    <button @click="step = 3" :disabled="!propertyType"
-                                        :class="propertyType ? 'bg-black text-white' : 'bg-gray-400 text-white cursor-not-allowed'"
-                                        class="w-full lg:w-[275px] py-2  rounded-full text-base font-normal transition-all duration-300 cursor-pointer">
+                                    <button @click="objective === 'vendre' ? step = 4 : step = 'thanks'"
+                                        :disabled="!objective"
+                                        :class="objective ? 'bg-black text-white' : 'bg-dark/30 text-white cursor-not-allowed'"
+                                        class="w-full lg:w-[275px] py-2 rounded-full text-base font-normal transition-all duration-300">
                                         Suivant
                                     </button>
 
-                                    <button @click="step = 1" class="text-dark underline text-sm font-normal">
+                                    <button @click="step = 2; subStep = 3"
+                                        class="text-dark underline text-sm font-normal">
                                         Revenir à l'étape précédente
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Step-3 -->
-                            <div x-show="step === 3" x-cloak>
-                                <h2 class="text-2xl font-bold mb-8">Étape 3: Objectif</h2>
-                                <button @click="step = 2" class="text-gray-700 underline">Retour</button>
+
+
+                            <!-- Step-4 -->
+                            <div x-show="step === 4" x-cloak x-transition>
+                                <h2 class="text-base font-semibold mb-8 text-black">Sous quel délai aimeriez-vous le
+                                    faire ?</h2>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-4 mb-10">
+                                    <div @click="delay = '1-3'"
+                                        class=" p-4 rounded-full cursor-pointer flex items-center  gap-3 border transition-all"
+                                        :class="delay === '1-3' ? 'border-primary ring-1 ring-primary bg-[#FAF9F6]' : 'border-transparent bg-white'">
+                                        <div class="w-5 h-5 rounded-full  flex-shrink-0 flex items-center justify-center bg-light"
+                                            :class="delay === '1-3' ? 'bg-primary border-primary' : ''">
+                                            <template x-if="delay === '1-3'">
+                                                <span class="text-white text-[10px]">✓</span>
+                                            </template>
+                                        </div>
+                                        <span class="text-[14px] text-black"
+                                            :class="delay === '1-3' ? 'font-semibold' : 'font-normal'">1 à 3 mois</span>
+                                    </div>
+
+                                    <div @click="delay = '3-6'"
+                                        class=" p-4 rounded-full cursor-pointer flex items-center  gap-3 border transition-all"
+                                        :class="delay === '3-6' ? 'border-primary ring-1 ring-primary bg-[#FAF9F6]' : 'border-transparent bg-white'">
+                                        <div class="w-5 h-5 rounded-full  flex-shrink-0 flex items-center justify-center bg-light"
+                                            :class="delay === '3-6' ? 'bg-primary border-primary' : ''">
+                                            <template x-if="delay === '3-6'">
+                                                <span class="text-white text-[10px]">✓</span>
+                                            </template>
+                                        </div>
+                                        <span class="text-[14px] text-black"
+                                            :class="delay === '3-6' ? 'font-semibold' : 'font-normal'">3 à 6 mois</span>
+                                    </div>
+
+                                    <div @click="delay = '6+'"
+                                        class=" p-4 rounded-full cursor-pointer flex items-center  gap-3 border transition-all"
+                                        :class="delay === '6+' ? 'border-primary ring-1 ring-primary bg-[#FAF9F6]' : 'border-transparent bg-white'">
+                                        <div class="w-5 h-5 rounded-full  flex-shrink-0 flex items-center justify-center bg-light"
+                                            :class="delay === '6+' ? 'bg-primary border-primary' : ''">
+                                            <template x-if="delay === '6+'">
+                                                <span class="text-white text-[10px]">✓</span>
+                                            </template>
+                                        </div>
+                                        <span class="text-[14px] text-black"
+                                            :class="delay === '6+' ? 'font-semibold' : 'font-normal'">6 mois et +</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col items-center gap-4">
+                                    <button @click="step = 'estimation_final'" :disabled="!delay"
+                                        :class="delay ? 'bg-black text-white' : 'bg-dark/30 text-white cursor-not-allowed'"
+                                        class="w-full lg:w-[275px] py-2 rounded-full text-base font-normal transition-all duration-300">
+                                        Suivant
+                                    </button>
+
+                                    <button @click="step = 3" class="text-dark underline text-sm font-normal">
+                                        Revenir à l'étape précédente
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Thanks Step  -->
+                            <div x-show="step === 'thanks'" x-cloak class="text-center py-10">
+                                <h2 class="text-2xl font-bold mb-4">Merci !</h2>
+                                <p>Nous avons bien reçu votre demande d'estimation.</p>
+                                <button @click="step = 1; objective = null" class="mt-6 text-dark underline">Retour à
+                                    l'accueil</button>
                             </div>
 
                         </div>
+
+
                     </div>
                     <div class="w-full lg:max-w-[380px]">
                         <h3 class="text-xl font-semibold mb-2">
